@@ -1,0 +1,88 @@
+<!--
+/*
+ * AUTHOR:       sujiayang
+ * EMAIL:        602028597@qq.com
+ * CREATE TIME:  2015.3.18
+ **/
+-->
+<div id="chatRoomBody" ng-show="!showImage">
+    <div class="top_bar" id="chat_top_bar">
+        <a ng-click="back()"><img src="app/static/image/return.png" width="16px" height="16px" /></a>
+        <span>{{doctor.name}}</span>
+    </div>
+
+     <ul id="chatMessage">
+        <li ng-repeat="msg in message" ng-class="{'isMine': msg.isMine}">
+            <p ng-show="msg.showDialogTime">
+                <span>{{msg.dialogTime}}</span>
+            </p>
+            <img ng-src="{{msg.fromUserPhoto}}"  class="circular ui image" width="40px" height="40px"/>
+            <p ng-show="!msg.dialogImage" ng-bind-html="msg.dialogMessage" class="dialogMessages">
+                <!-- {{msg.dialogMessage}} -->
+            </p>
+            <img class="dialogImages" ng-src="{{msg.dialogImage}}" width="30%" onload="angular.element(this).scope().srcollBottom();" onclick="window.clearInterval(chatRoomPolling);" ng-click="imageShow(msg.dialogImage)"/>
+            <div style="clear: both;"></div>
+        </li>
+    </ul>
+
+    <!--输入框界面-->
+    <form id="chatForm">
+
+        <span ng-init='showEmotionChoose=false' id="chatFormEmotionSpan">
+            <!--添加表情按钮-->
+            <button ng-click="showEmotionChoose=!showEmotionChoose;">
+                <img src="app/static/image/chatFace.png" />
+            </button>
+        </span>
+
+        <!--输入框-->
+        <span id="chatFormInputSpan" ng-click="srcollBottom();showFunctionChoose=false;showEmotionChoose=false;" ng-class="{'inputNotEmpty-input': myMsg!=''}">
+            <input type="text" id="chatInput" autocomplete="off" ng-model="myMsg" maxlength="200"/>
+        </span>
+
+        <span ng-init='myMsg="";showFunctionChoose=false;showEmotionChoose=false' id="chatFormFunctionSpan" ng-class="{'inputNotEmpty-button': myMsg!=''}">
+
+            <!--添加工具按钮-->
+            <button ng-show='myMsg==""' class="chatFormImageButton" ng-click="showFunctionChoose=!showFunctionChoose;">
+                <img src="app/static/image/chatAdd.png" />
+            </button>
+
+            <!--发送按钮-->
+            <button ng-show='myMsg!=""' ng-click="sendMyMsg()" id="sendMessagesButton">
+                发送
+            </button>
+        </span>
+    </form>
+
+    <!--功能选择界面-->
+    <div ng-show="showFunctionChoose" id="chatRoomFunctionChoose">
+        
+        <form enctype="multipart/form-data" id="sendImgForm">
+            <button ng-click="sendPicture()">照片</button>
+            <input id="sendImgInput" name="image" type="file" onchange="angular.element(this).scope().sendImage(this)" />
+        </form>
+
+        <button ng-click="takePhoto()">拍摄</button>
+    </div>
+
+    <!--表情选择界面-->
+    <div ng-show="showEmotionChoose" id="chatRoomEmotionChoose">
+        
+        <img src="app/static/face/em1.png" ng-click="selectEmotion('[em1]')"/>
+        <img src="app/static/face/em2.png" ng-click="selectEmotion('[em2]')"/>
+        <img src="app/static/face/em3.png" ng-click="selectEmotion('[em3]')"/>
+        <img src="app/static/face/em4.png" ng-click="selectEmotion('[em4]')"/>
+        <img src="app/static/face/em5.png" ng-click="selectEmotion('[em5]')"/>
+
+    </div>
+</div>
+<div id="imagesShowBody" ng-show="showImage">
+    <div class="top_bar">
+        <img ng-click="backToChatRoom();" src="app/static/image/return.png" width="16px" height="16px"/>
+        <span>返回</span>
+    </div>
+
+    <section>
+        <img ng-src="{{imageUrl}}">
+    </section>
+</div>

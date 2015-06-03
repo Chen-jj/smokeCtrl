@@ -1,0 +1,122 @@
+<!--
+/*
+* AUTHOR: wyp
+* EMAIL: 1140664142@qq.com
+* CREATE TIME: 2015.1.28
+*/
+/*
+* AUTHOR: weapon
+* EMAIL: 2385367768@qq.com
+* EDIT TIME: 2015.3.12
+*/
+-->
+<div id="userMenuContent">
+    <div ng-include="'app/views/top.html'"></div>
+    <div id="userMenuImage">
+        <div id = "head">
+            <img ng-click="upPhoto()" id="headImage" ng-src="{{userInfo.photo}}"/>
+            <img id="male" ng-show="userInfo.gender=='男'" ng-click="userInfo.gender='女'; save();"  ng-src="app/static/image/male.png"/>
+            <img id="female" ng-show="userInfo.gender=='女'" ng-click="userInfo.gender='男'; save();"  ng-src="app/static/image/female.png"/>
+        </div>
+        <p class="userName">{{userInfo.name}}</p>
+        <div class="userMenu">
+            <div class="myBooking" ui-sref="userBooking" onclick="window.clearInterval(chatCheckPolling);">
+                <div>
+                    <img src="app/static/image/booking.png" width="23px" height="23px">
+                </div>
+                <div>我的预约</div>
+            </div>
+            <div class="myNews" ui-sref="chatList" onclick="window.clearInterval(chatCheckPolling);">
+                <div>
+                  <!--   <div ng-show="msgCount" class="">
+                    {{msgCount}}
+                    </div> -->
+                    <img ng-src="app/static/image/chatList_red.png" width="9px" height="9px" ng-show="msgCount>0">
+                    <img src="app/static/image/news.png" width="23px" height="18px">
+                </div>
+                <div>我的消息</div>
+            </div>
+
+            <!-- <div class="myWallet">
+                <div>
+                    <img src="app/static/image/wallet.png" width="23px" height="21px">
+                </div>
+                <div>我的钱包</div>
+            </div> -->
+        </div>
+    </div>
+    <div class="userGinfo">
+
+        <div class="userG" ng-click="editingTitle='修改名字';edit();">
+            <span class="userNickName">名字</span>
+            <img src="app/static/image/go.png" class="userInfoGoLogo">
+            <span class="userInfoArticle">{{userInfo.name}}</span>
+        </div>
+
+        <div class="userG" ng-click="editingTitle='修改手机';edit();">
+            <span class="userPhone">手机</span>
+            <img src="app/static/image/go.png" class="userInfoGoLogo">
+            <span class="userInfoArticle">{{userInfo.mobilePhone}}</span>
+        </div>
+
+        <div class="userG" ng-click="editingTitle='修改邮箱';edit();">
+            <span class="userEmail">邮箱</span>
+            <img src="app/static/image/go.png" class="userInfoGoLogo">
+            <span class="userInfoArticle">{{userInfo.mail}}</span>
+        </div>
+
+    </div>
+
+    <div class="myCollect">
+
+        <div class="myCollection" ui-sref="userFavorite" onclick="window.clearInterval(chatCheckPolling);">
+            <span>我的收藏</span>
+            <img src="app/static/image/go.png" class="userInfoGoLogo">
+        </div>
+
+        <div class="myCollection">
+            <span>我的病历</span>
+            <img src="app/static/image/go.png" class="userInfoGoLogo">
+        </div>
+
+    </div>
+
+    <div id="userInfo_logoutButton" ng-click="logout()" onclick="window.clearInterval(chatCheckPolling);">
+        <span>退出登陆</span>
+    </div>
+
+    <div class="ui standard modal">
+        <div id="chooseLogo">
+            <form enctype="multipart/form-data" >
+                <input name="image" type="file" onchange="document.getElementById('textfield').innerHTML=this.value" id="logoInputTag" />
+                <div>
+                    <button id="textfield">从相册选择</button>
+                </div>
+                <button value="上传" ng-click="uploadLogo()">上传</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div id="userInfoEditField" class="editFieldSlideUpBefore">
+
+     <div class="returnPic textAlignCenter">
+         <span class="floatLeft paddingLeft15px" ng-click="endEdit()">取消</span>
+
+         <span>{{editingTitle}}</span>
+
+         <span class="floatRight paddingLeft15px" ng-click="save();">保存</span>
+    </div>
+
+    <div id="userInfoEditFieldInputs">
+        <form name="userInfoBaseForm">
+            <input type="text" name="username" ng-show="editingTitle=='修改名字'" ng-model="preName" autocomplete="off"/>
+            <input type="text" name="userphone" ng-show="editingTitle=='修改手机'" ng-model="prePhone" autocomplete="off"/>
+            <input type="text" name="useremail" ng-show="editingTitle=='修改邮箱'" ng-model="preEmail" autocomplete="off"/>
+        </form>
+    </div>
+    
+    <section class="form-alert"></section>
+
+</div>

@@ -1,0 +1,104 @@
+<div id="healthEvaBody">
+	
+    <div ng-include="'app/views/top.html'"></div>
+
+	<div class="list" ng-init="showEvaRes=false">
+
+		<div class="item item-divider">
+			疾病评估
+		</div>
+
+		<label class="item item-input item-select">
+			<div class="input-label">
+				症状选择
+			</div>
+			<select id="sec" onchange="angular.element(this).scope().dueEvaRes()">
+				<option>--请选择--</option>
+				<option>发热、流涕</option>
+				<option>咳嗽</option>
+				<option>肥胖</option>
+			</select>
+		</label>
+
+		<div class="item wrap" ng-show="showEvaRes">
+			{{evaRes}}
+		</div>
+
+		<div class="item item-divider">
+			BMI评估（公制）
+		</div>
+
+		<div class="item">
+			<span class="width7em">身高（公分）：</span>
+			<div class="ui input">
+			    <input type="text" placeholder="请输入身高" ng-model="height">
+			</div>
+		</div>
+
+		<div class="item">
+			<span class="width7em">体重（公斤）：</span>
+			<div class="ui input">
+			    <input type="text" placeholder="请输入体重" ng-model="weight">
+			</div>
+		</div>
+
+		<div class="item">
+			<span class="width7em">性别：</span>
+			<div class="ui input">
+			    <input type="text" placeholder="请输入性别" ng-model="sex">
+			</div>
+		</div>
+
+		<div class="item">
+			<span class="width7em">年龄：</span>
+			<div class="ui input">
+			    <input type="text" placeholder="请输入年龄" ng-model="age">
+			</div>
+		</div>
+
+		<div class="item wrap">
+            <button class="button button-full button-positive" ng-click="figureBMI()">
+                开始计算BMI
+            </button>
+
+            <h1>BMI: {{BMI}}</h1>
+            <p>BMI是世界公认的一种评定肥胖程度的分级方法，世界卫生组织(WHO)也以BMI来对肥胖或超重进行定义。</p>
+            <p>
+            	<table>
+            		<tr>
+            			<td></td>
+            			<td>中国标准</td>
+            			<td>相关疾病发病危险率</td>
+            		</tr>
+            		<tr>
+            			<td>偏瘦</td>
+            			<td><18.5</td>
+            			<td>低（但其它疾病危险性增加）</td>
+            		</tr>
+            		<tr>
+            			<td>正常</td>
+            			<td>18.5-23.9</td>
+            			<td>平均水平</td>
+            		</tr>
+            		<tr>
+            			<td>超重</td>
+            			<td>≥24</td>
+            			<td>增加</td>
+            		</tr>
+            		<tr>
+            			<td>偏胖</td>
+            			<td>24～27.9	</td>
+            			<td>增加</td>
+            		</tr>
+            		<tr>
+            			<td>肥胖</td>
+            			<td>≥28</td>
+            			<td>中度增加</td>
+            		</tr>
+            	</table>
+			</p>
+		</div>
+
+	</div>
+
+</div>

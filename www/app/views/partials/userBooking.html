@@ -1,0 +1,27 @@
+<!--
+  userBooking.html
+  AUTHOR: Chen jiayu
+  CREATE TIME: 2015.1.24
+ -->
+<div id="userBookingBody" ng-init="dataListModiflyAble=false">
+  <div class="top_bar">
+      <img src="app/static/image/return.png" ng-click="back()" width="16px" height="16px" />
+      <span>{{title}}</span>
+      <img src="app/static/image/dateList_modifly.png" width="20.5px" height="17.5px" class="top_bar_favorite" ng-click="dataListModiflyAble=true" ng-show="!dataListModiflyAble">
+      <img src="app/static/image/dateList_finish.png" width="20.5px" height="17.5px" class="top_bar_favorite" ng-click="dataListModiflyAble=false" ng-show="dataListModiflyAble">
+  </div>
+  <!--    显示预约列表  -->
+  <div class="everyItem" ng-repeat="booking in bookingList">
+      <div class="oneItem"  ui-sref="userBookingDetail({bookingId : booking.bookingID})">
+        <img class="doctorImg" ng-src="{{booking.doctor.photo}}">
+        <p>{{booking.doctor.name}}</p>
+        <p>
+            <img src="app/static/image/time.png" />
+            <span>{{booking.bookingDay}}</span>
+        </p>
+        <p>{{booking.bookingT}}</p>
+        <img class="dateListArrow" src="app/static/image/go.png" ng-show="!dataListModiflyAble">
+      </div>
+      <img class="dateListRubbish" src="app/static/image/booking_delete.png" ng-show="dataListModiflyAble" width="40px" height="40px"  ng-click="removeDate($index)">
+  </div>
+<div>

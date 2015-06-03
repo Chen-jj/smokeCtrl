@@ -1,0 +1,25 @@
+{
+    "ID": 1,
+    "new": "纲手大人亲自就诊",
+    "name": "蛞蝓疗养院",
+    "address": "火之国木叶村",
+    "phone": "020-00000001",
+    "serverRating": 5,
+    "treatRating": 5,
+    "chargeRating": 5,
+    "images": [
+        {"url":"../static/image/clinic_1_1.jpg"},
+        {"url":"../static/image/clinic_1_2.jpg"},
+        {"url":"../static/image/clinic_1_3.jpg"}
+    ],
+    "offices":[
+        {
+            "id": 0,
+            "name": "外科"
+        },
+        {
+            "id": 1,
+            "name": "妇产科"
+        }
+    ]
+}

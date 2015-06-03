@@ -1,0 +1,29 @@
+<!--
+/*
+* AUTHOR: wyp
+* EMAIL: 1140664142@qq.com
+* CREATE TIME: 2015.1.28
+*/
+-->
+<div class="loginBody">
+    <div ng-include="'app/views/top.html'"></div>
+    <form name="loginForm">
+        <div class="login">
+            <div class="loginNum">
+                <img src="app/static/image/loginNum.png">
+                <label>账号</label>
+                <input type="text" name="username" ng-model="login_id" placeholder="请输入手机" autocomplete="off" />
+            </div>
+            <div class="loginPw">
+                <img src="app/static/image/loginPw.png">
+                <label>密码</label>
+                <input type="password" name="password" ng-model="login_pw" placeholder="请输入密码，至少六位" autocomplete="off" />
+            </div>
+            <section class="form-alert"></section>
+
+            <div class="theTwo">
+                <button class="registerButton" ng-click="submit()">注册</button>
+            </div>
+        </div>
+    </form>
+</div>

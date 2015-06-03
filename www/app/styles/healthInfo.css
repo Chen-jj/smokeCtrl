@@ -1,0 +1,38 @@
+.healthInfoNav {
+	background-color: white;
+	padding: 20px;
+}
+
+.helthInfobuttons {
+	font-size: 0px;
+	margin-top: 20px;
+}
+
+.helthInfobuttons div {
+	display: inline-block;
+	width: 20%;
+	font-size: 0px;
+	text-align: center;
+}
+
+.healthInfoItems {
+	border-bottom: 1px solid #e1e1e1;
+	height: 60.5px;
+	padding: 12px 16px;
+}
+
+.healthInfoItems img {
+	float: right;
+}
+
+.healthInfoItems p:nth-child(3) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 70%;
+}
+
+.healthInfoItems p:nth-child(4) {
+	float: right;
+	margin-right: 20px;
+}

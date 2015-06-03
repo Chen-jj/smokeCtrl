@@ -1,0 +1,41 @@
+<div id="hMhistoryBody">
+
+	<div ng-include="'app/views/top.html'"></div>
+
+	<div id="hMhistoryMain">
+		
+		<p id="hMhistoryTitleP">历史{{type}}状况</p>
+
+		<section id="hMhistoryMenu">
+
+			<div id="echarts_line"></div>
+
+			<div class="textAlignCenter paddingBottom10px" ng-show="data.length != 0">
+                <div class="my-select">  
+                    <span>{{chooseDay_1}}</span>
+                    <img src="app/static/image/clinicInfoRoom_down.png" />
+                    <select ng-model="chooseDay_1" ng-options="m for m in dayArray_1" ng-change="changeS2Opts()"></select>
+                </div>
+                <span> 至 </span>
+                <div class="my-select">  
+                    <span>{{chooseDay_2}}</span>
+                    <img src="app/static/image/clinicInfoRoom_down.png" />
+                    <select ng-model="chooseDay_2" ng-options="m for m in dayArray_2" ng-change="yearRangefilter();"></select>
+                </div>
+			</div>
+
+			<div class="hMhistoryItem" ng-repeat="item in visualData">
+				<span ng-show="type=='血压'">{{item.dbp}}/</span>
+				<span ng-show="type=='血压'">{{item.sbp}}/</span>
+				<span ng-show="type=='血压'">{{item.heartRate}}</span>
+				<span ng-show="type!='血压'">{{item.record}}</span>
+				<span>{{item.date}}</span>
+			</div>
+	
+			<div ng-show="data.length == 0" class="textAlignCenter">您还没有添加过此项数据哦</div>
+
+		</section>
+
+	</div>
+
+</div>

@@ -1,0 +1,78 @@
+<div id="hMUserDetailBody">
+
+	<div ng-include="'app/views/top.html'"></div>
+
+	<section id="hMUserDetailSection1" class="hMUserDetailSections">
+        <img ng-src="{{memberInfo.photo}}"/>
+        <p>{{userName}}</p>
+        <p>体质BMI: {{BMI}}</p>
+	</section>
+
+	<section id="hMUserDetailSection2" class="hMUserDetailSections">
+		<div class="userG" ng-click="editingTitle='修改性别';edit();">
+			<span>性别</span>
+            <img src="app/static/image/go.png" class="userInfoGoLogo">
+			<span class="userInfoArticle">{{memberInfo.gender}}</span>
+		</div>
+		<div class="userG" ng-click="editingTitle='修改身高';edit();">
+			<span>身高</span>
+            <img src="app/static/image/go.png" class="userInfoGoLogo">
+			<span class="userInfoArticle">{{memberInfo.height}} cm</span>
+		</div>
+		<div class="userG" ng-click="editingTitle='修改体重';edit();">
+			<span>体重</span>
+            <img src="app/static/image/go.png" class="userInfoGoLogo">
+			<span class="userInfoArticle">{{memberInfo.weight}} kg</span>
+		</div>
+		<div class="userG" ng-click="editingTitle='修改年龄';edit();">
+			<span>年龄</span>
+            <img src="app/static/image/go.png" class="userInfoGoLogo">
+			<span class="userInfoArticle">{{memberInfo.birthday}} 岁</span>
+		</div>
+	</section>
+
+<!-- 	<section id="hMUserDetailSection3" class="hMUserDetailSections">
+	<div class="userG" ng-click="editingTitle='是否抽烟';edit();">
+		<span>是否抽烟</span>
+            <img src="app/static/image/go.png" class="userInfoGoLogo">
+		<span class="userInfoArticle">{{userInfo.isSmoking}}</span>
+	</div>
+	<div class="userG" ng-click="editingTitle='是否喝酒';edit();">
+		<span>是否喝酒</span>
+            <img src="app/static/image/go.png" class="userInfoGoLogo">
+		<span class="userInfoArticle">{{userInfo.isDrinking}}</span>
+	</div>
+</section> -->
+
+<!-- 	<p id="sickHistoryP">病史</p>
+<section id="hMUserDetailSection4" class="hMUserDetailSections">
+        <img src="app/static/image/add.png" />
+</section> -->
+
+</div>
+
+<div id="healthInfoEditField" class="editFieldSlideUpBefore">
+
+     <div class="returnPic textAlignCenter">
+         <span class="floatLeft paddingLeft15px" ng-click="endEdit()">取消</span>
+
+         <span>{{editingTitle}}</span>
+
+         <span class="floatRight paddingLeft15px" ng-click="save();">保存</span>
+    </div>
+
+    <div id="healthInfoEditFieldInputs">
+        <form name="healthInfoBaseForm">
+            <input type="text" name="userheight" ng-show="editingTitle=='修改身高'" ng-model="preHeight" placeholder="请输入身高（单位：cm）" autocomplete="off"/>
+            <input type="text" name="userweight" ng-show="editingTitle=='修改体重'" ng-model="preWeight" placeholder="请输入体重（单位：kg）" autocomplete="off"/>
+            <input type="text" name="userbirthday" ng-show="editingTitle=='修改年龄'" ng-model="preBirthday" placeholder="请输入年龄" autocomplete="off"/>
+        </form>
+        <div ng-show="editingTitle=='修改性别'" id="healthInfoChooseSex">
+        	<div ng-click="preSex='男'">男<img ng-show="preSex=='男'" src="app/static/image/greenHock.png"/></div>
+        	<div ng-click="preSex='女'">女<img ng-show="preSex=='女'" src="app/static/image/greenHock.png"/></div>
+        </div>
+    </div>
+    
+    <section class="form-alert"></section>
+
+</div>

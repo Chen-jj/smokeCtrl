@@ -1,0 +1,45 @@
+<!--
+/*
+* AUTHOR: wyp
+* EMAIL: 1140664142@qq.com
+* CREATE TIME: 2015.1.30
+*/
+-->
+<div ng-include="'app/views/top.html'"></div>
+
+<div class="healthInfoNav">
+    <div class="ui fluid icon input">
+        <input type="text" ng-model="query">
+        <i class="search icon"></i>
+    </div>
+    <div class="helthInfobuttons">
+        <div>
+            <button class="my-white-button orangeButton">热点</button>
+        </div>
+
+        <div>
+            <button class="my-white-button pinkButton">两性</button>
+        </div>
+
+        <div>
+            <button class="my-white-button purpleButton">情感</button>
+        </div>
+
+        <div>
+            <button class="my-white-button blueButton">育儿</button>
+        </div>
+
+        <div>
+            <button class="my-white-button">其他</button>
+        </div>
+    </div>
+</div>
+
+<div ng-repeat="info in healthInfos| orderBy:'id':true | filter:query"  class="healthInfoItems">
+    <img ng-src="{{info.image}}" width="60.5px" height="60.5px" />
+    <h3 class="black000000 fontWeight500">{{info.title}}</h3>
+    <p class="grey999999">{{info.content}}</p>
+    <p class="grey999999">
+        <i class="book icon"></i>{{info.praise}}阅读
+    </p>
+</div>

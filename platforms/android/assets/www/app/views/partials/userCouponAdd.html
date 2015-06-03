@@ -1,0 +1,37 @@
+<!--
+/*
+* AUTHOR: wyp
+* EMAIL: 1140664142@qq.com
+* CREATE TIME: 2015.1.28
+*/
+-->
+<div ng-include="'/views/top.html'"></div>
+<div class="ui divider"></div>
+<div class = "ui raised segment">
+    <div class = "ui ribbon label">选择诊所</div>
+    <p>
+        <div class="ui selection dropdown" ng-click="dropInit()">
+            <div class="text">请选择</div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+                <div class = "item" ng-repeat="province in provinces">
+                    <div ng-click="selectProvince(province)">{{province.name}}</div>
+                </div>
+            </div>
+        </div>
+    </p>
+    <div class = "ui ribbon label">选择金额</div>
+    <p>
+    <div class="ui selection dropdown" ng-click="dropInit()">
+        <div class="text">请选择</div>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+            <div class = "item" ng-repeat="province in provinces">
+                <div ng-click="selectProvince(province)">{{province.name}}</div>
+            </div>
+        </div>
+    </div>
+    </p>
+</div>
+<div class="ui divider"></div>
+<button class="ui button" ng-click="">确认购买</button>

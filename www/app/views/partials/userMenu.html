@@ -1,0 +1,150 @@
+<!--
+/*
+* AUTHOR: wyp
+* EMAIL: 1140664142@qq.com
+* CREATE TIME: 2015.1.28
+*/
+/*
+* AUTHOR: weapon
+* EMAIL: 2385367768@qq.com
+* EDIT TIME: 2015.3.12
+*/
+-->
+<div id="userMenuContent">
+    <div ng-include="'app/views/top.html'"></div>
+<!--    <div id="userMenuImage">
+        <div id = "head">
+            <img ng-click="upPhoto()" id="headImage" ng-src="{{userInfo.photo}}"/>
+            <img id="male" ng-show="userInfo.gender=='男'" ng-click="userInfo.gender='女'; save();"  ng-src="app/static/image/male.png"/>
+            <img id="female" ng-show="userInfo.gender=='女'" ng-click="userInfo.gender='男'; save();"  ng-src="app/static/image/female.png"/>
+        </div>
+        <p class="userName">{{userInfo.name}}</p>
+        <div class="userMenu">
+            <div class="myBooking" ui-sref="userBooking" onclick="window.clearInterval(chatCheckPolling);">
+                <div>
+                    <img src="app/static/image/booking.png" width="23px" height="23px">
+                </div>
+                <div>我的预约</div>
+            </div>
+            <div class="myNews" ui-sref="chatList" onclick="window.clearInterval(chatCheckPolling);">
+                <div>
+                    <img ng-src="app/static/image/chatList_red.png" width="9px" height="9px" ng-show="msgCount>0">
+                    <img src="app/static/image/news.png" width="23px" height="18px">
+                </div>
+                <div>我的消息</div>
+            </div>
+        </div>
+    </div>-->
+    <div class="userGinfo">
+
+        <div class="userG">
+            <span class="userNickName">我的总资产（电子病历）</span>
+            <span class="userInfoArticle">3份</span>
+        </div>
+
+        <div class="userG">
+            <span class="userNickName">健康监测数据</span>
+            <span class="userInfoArticle">1份</span>
+        </div>
+
+        <div class="userG">
+            <span class="userNickName">健康管理数据</span>
+            <span class="userInfoArticle">5份</span>
+        </div>
+
+        <div class="userG">
+            <span class="userNickName">健康评估数据</span>
+            <span class="userInfoArticle">5份</span>
+        </div>
+
+        <div class="userG">
+            <span class="userNickName">我的保险数据</span>
+            <span class="userInfoArticle">{{asurancesNum}}份</span>
+        </div>
+
+    </div>
+
+    <div class="myCollect">
+
+        <div class="myCollection">
+            <span>开发区医院</span>
+            <span class="userInfoArticle">1份</span>
+        </div>
+
+        <div class="myCollection">
+            <span>开发区第二医院</span>
+            <span class="userInfoArticle">1份</span>
+        </div>
+
+        <div class="myCollection">
+            <span>开发区第三医院</span>
+            <span class="userInfoArticle">1份</span>
+        </div>
+
+    </div>
+
+    <div class="myCollect">
+
+        <div class="myCollection">
+            <li class="item-toggle">
+                是否对医生授权
+                <label class="toggle toggle-assertive">
+                    <input type="checkbox">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+        </div>
+
+        <div class="myCollection">
+            <li class="item-toggle">
+                是否对保险公司授权
+                <label class="toggle toggle-assertive">
+                    <input type="checkbox">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+        </div>
+
+        <div class="myCollection">
+            <li class="item-toggle">
+                是否对科研机构授权
+                <label class="toggle toggle-assertive">
+                    <input type="checkbox">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+        </div>
+
+        <div class="myCollection">
+            <li class="item-toggle">
+                是否对医疗机构授权
+                <label class="toggle toggle-assertive">
+                    <input type="checkbox">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+        </div>
+
+    </div>
+
+    <div class="row" ng-init="showActivePwd=false">
+        <div class="col">
+            <button class="button button-full button-positive" ng-click="showActivePwd=true">
+                获取动态密码
+            </button>
+            <button class="button button-outline button-full button-positive" ng-show="showActivePwd==true">
+                39bfa2
+            </button>
+        </div>
+    </div>
+
+</div>
+

@@ -1,0 +1,76 @@
+#userBookingBody {
+	width: 100%;
+	min-width: 320px;
+}
+
+.everyItem {
+	position: relative;
+}
+
+.oneItem {
+	padding: 10px;
+    overflow: hidden;
+	border-bottom: 1px solid #e1e1e1;
+	position: relative;
+}
+
+.doctorImg {
+	width: 80px;
+	height: 80px;
+    margin-right: 10px;
+    float: left;
+}
+
+div.oneItem p:nth-child(2) {
+    font-size: 16px;
+    color: #565656;
+    margin-bottom: 12px;
+}
+
+div.oneItem p:nth-child(3) {
+    margin-bottom: 3px;
+}
+
+div.oneItem p:nth-child(3) img {
+    margin-right: 5px;
+    width: 15px;
+    height: 15px;
+}
+
+div.oneItem p:nth-child(3) span:nth-child(2) {
+    margin-bottom: 11px;
+    color: #999999;
+}
+
+div.oneItem p:nth-child(4) {
+    text-indent: 20.5px;
+    color: #999999;
+}
+
+img.dateListArrow {
+    position: absolute;
+    right: 22px;
+    top: 38.75px;
+}
+
+img.dateListRubbish {
+    position: absolute;
+    right: 14px;
+    top: 26px;
+}
+
+.bookingInfo {
+	width: 60%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.bookName, .bookDate {
+	padding: 3px;
+	line-height: 1.5em;
+}
+
+.bookDate img {
+	vertical-align: text-bottom;
+	margin-right: 3px;
+}

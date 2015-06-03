@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width, height=device-height">
+    <title>健康云空间</title>
+
+    <!-- semantic css -->
+    <link href="app/styles/semantic/packaged/css/semantic.min.css" rel="stylesheet">
+    <!-- ionic css -->
+    <link href="lib/ionic/css/ionic.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="app/styles/homepage.css">
+    <link rel="stylesheet" type="text/css" href="app/styles/clinicList.css">
+    <link rel="stylesheet" type="text/css" href="app/styles/clinicInfo.css">
+    <link rel="stylesheet" type="text/css" href="app/styles/chatList.css">
+    <link rel="stylesheet" type="text/css" href="app/styles/chatRoom.css">
+    <link rel="stylesheet" type="text/css" href="app/styles/top.css">
+    <link rel="stylesheet" type="text/css" href="app/styles/user.css">
+    <link rel="stylesheet" type="text/css" href="app/styles/clinic.css">
+    <link rel="stylesheet" type="text/css" href="app/styles/healthInfo.css">
+    <link rel="stylesheet" type="text/css" href="app/styles/date.css">
+    <link rel="stylesheet" type="text/css" href="app/styles/doctorList.css">
+    <link rel="stylesheet" type="text/css" href="app/styles/userFavorite.css">
+    <link rel="stylesheet" type="text/css" href="app/styles/userBooking.css">
+    <link rel="stylesheet" type="text/css" href="app/styles/logLogin.css">
+    <link rel="stylesheet" type="text/css" href="app/styles/healthEva.css">
+    <link rel="stylesheet" type="text/css" href="app/styles/healthManage.css">
+    <link rel="stylesheet" type="text/css" href="app/styles/imagesShow.css">
+    <link rel="stylesheet" type="text/css" href="app/styles/general.css">
+
+     
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script type="text/javascript" src="lib/ionic/js/ionic-angular.min.js"></script>
+    <script type="text/javascript" src="lib/ionic/js/ionic.min.js"></script>
+    <!-- javascript -->
+    <!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wWCV5Oc4fDR65pKjEfweOc27"></script>-->
+    <script type="text/javascript" src="app/bower_components/myJS/Area.js"></script>
+    <script type="text/javascript" src="app/bower_components/myJS/AreaData_min.js"></script>
+    <script type="text/javascript" src="app/bower_components/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="app/bower_components/jquery/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="app/styles/semantic/packaged/javascript/semantic.js"></script>
+    <script type="text/javascript" src="app/bower_components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="app/bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script type="text/javascript" src="app/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="app/bower_components/imageCompress/mobileFix.mini.js?v=ad62f13"></script>
+    <script type="text/javascript" src="app/bower_components/imageCompress/exif.js?v=80cb5c9"></script>
+    <script type="text/javascript" src="app/bower_components/imageCompress/lrz.js?v=3d33fcf"></script>
+    <!-- ECharts单文件引入 -->
+    <script type="text/javascript" src="app/bower_components/echarts-2.2.1/build/dist/echarts.js"></script>
+
+    <!-- app.js -->
+    <!-- your app's js -->
+    <script src="app/scripts/app.js"></script>
+    <!-- <script type="text/javascript" src="app/scripts/app.js"></script> -->
+    <script type="text/javascript" src="app/scripts/virtual.js"></script>
+
+     <!-- controllers -->
+    <script type="text/javascript" src="app/scripts/controllers/homepage.js"></script>
+    <script type="text/javascript" src="app/scripts/controllers/clinic.js"></script>
+    <script type="text/javascript" src="app/scripts/controllers/doctor.js"></script>
+    <script type="text/javascript" src="app/scripts/controllers/chat.js"></script>
+    <script type="text/javascript" src="app/scripts/controllers/user.js"></script>
+    <script type="text/javascript" src="app/scripts/controllers/log.js"></script>
+    <script type="text/javascript" src="app/scripts/controllers/healthInfo.js"></script>
+    <script type="text/javascript" src="app/scripts/controllers/healthManage.js"></script>
+    <script type="text/javascript" src="app/scripts/controllers/topbar.js"></script>
+    <script type="text/javascript" src="app/scripts/controllers/searchDoctor.js"></script>
+    <script type="text/javascript" src="app/scripts/controllers/healthEva.js"></script>
+    <!-- services -->
+    <script type="text/javascript" src="app/scripts/services/userServices.js"></script>
+    <script type="text/javascript" src="app/scripts/services/dateServices.js"></script>
+     <script type="text/javascript" src="app/scripts/services/cameraServices.js"></script>
+     <script type="text/javascript" src="app/scripts/services/echartsServices.js"></script>
+    <!-- directives -->
+    <script type="text/javascript" src="app/scripts/directives/inputWatcher.js"></script>
+    <!-- action js -->
+    <!-- filter -->
+    
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+  </head>
+  <body ng-app="starter">
+      <ionic-nav-view><ionic-view ui-view></ionic-view></ionic-nav-view>
+  </body>
+</html>

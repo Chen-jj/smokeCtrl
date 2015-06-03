@@ -1,0 +1,323 @@
+div#dateTimeChooseBody {
+    min-width: 320px;
+    min-height: 100%;
+    background-color: #f1f1f1;
+}
+
+div#dateTimeChooseBody div.dateTimeChooseItems {
+    background-color: #ffffff;
+}
+
+div.dateTimeChooseItems {
+    padding: 14px;
+    font-size: 14px;
+    border-bottom: 1px solid #e1e1e1;
+    position: relative;
+}
+
+div.dateTimeChooseItems p:first-child {
+    font-size: 12px;
+    color: #999999;
+    line-height: 1em;
+    margin-bottom: 10.5px;
+}
+
+div.dateTimeChooseItems p:nth-child(2) {
+    color: #565656;
+    line-height: 1em;
+}
+
+div.dateTimeChooseItems p:nth-child(2) span:first-child {
+    margin-right: 20px;
+}
+
+div.dateTimeChooseItems div {
+    width: 89.5px;
+    position: absolute;
+    top: 16.5px;
+    right: 15.5px;
+    text-align: center;
+    padding-top: 6.25px;
+    padding-bottom: 6.25px;
+    border-radius: 40px;
+}
+
+div.dateTimeChooseItems div.dateTimeChooseActive {
+    color: white;
+    background-color: #39bfa2;
+}
+
+div.dateTimeChooseItems div.dateTimeChooseNegative {
+    color: white;
+    background-color: #d6d6d6;
+}
+
+div.dateTimeChooseDetailFormItem {
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    border-bottom: 1px solid #e1e1e1;
+    overflow: hidden;
+}
+
+div.dateTimeChooseDetailFormItem div:first-child {
+    width: 30%;
+    height: 100%;
+    background-color: #f1f1f1;
+    color: #999999;
+    text-align: center;
+    float: left;
+}
+
+div.dateTimeChooseDetailFormItem div:first-child img {
+    margin-top: 20px;
+    margin-bottom: 2px;
+}
+
+div.dateTimeChooseDetailFormItem div:last-child {
+    float: left;
+    width: 70%;
+    height: 100%;
+}
+
+div.dateTimeChooseDetailFormItem div:last-child span {
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    font-size: 17px;
+}
+
+div.dateTimeChooseDetailFormItem div:last-child span:first-child {
+    margin-top: 17px;
+}
+
+div.dateTimeChooseDetailFormItem input {
+    height: 100%;
+    text-align: center;
+    min-width: 250px;
+    font-size: 17px;
+    border: none;
+}
+
+div.dateTimeChooseDetailFormItem input:focus {
+    outline: none;
+}
+
+div#dateTimeChooseSubmit {
+    width: 292px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: white;
+    background-color: #39bfa2;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+div#dateListBody {
+    min-width: 320px;
+    min-height: 100%;
+    background-color: #f1f1f1;
+    position: relative;
+}
+
+div.dateListItem {
+    padding: 14px;
+    border-bottom: 1px solid #e1e1e1;
+    line-height: 1em;
+    height: 60px;
+    font-size: 14px;
+    color: #999999;
+    position: relative;
+}
+
+div.dateListItem img.dateListLogo {
+    margin-right: 13.5px;
+    float: left;
+}
+
+div.dateListItem p:nth-child(2) {
+    font-size: 16px;
+    color: #565656;
+    margin-bottom: 12px;
+}
+
+div.dateListItem p:nth-child(3) {
+    margin-bottom: 11px;
+}
+
+div.dateListItem p:nth-child(3) img {
+    margin-right: 5px;
+}
+
+div.dateListItem p:nth-child(3) span:nth-child(2) {
+    margin-bottom: 11px;
+}
+
+div.dateListItem p:nth-child(4) {
+    text-indent: 20.5px;
+}
+
+img.dateListArrow {
+    position: absolute;
+    right: 14px;
+    top: 38.75px;
+}
+
+img.dateListRubbish {
+    position: absolute;
+    right: 14px;
+    top: 26px;
+}
+
+.dateListModifly {
+    float: right;
+    padding: 13px 14px;
+}
+
+.dateListButtons {
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 14px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.dateListButton {
+    font-size: 16px;
+    background-color: #39bfa2;
+    text-align: center;
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
+.dateListButton:first-child {
+    margin-bottom: 14px;
+}
+
+.dateListButton a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+div#dateTimeAbleBody {
+    min-width: 320px;
+    min-height: 100%;
+    background-color: #f1f1f1;
+    position: relative;
+}
+
+div#dateTimeAbleBody div:first-child {
+    margin-bottom: 20px;
+}
+
+div#dateForm {
+    width: 100%;
+    color: #999999;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+div#dateForm ul.dateCol.firstCol li {
+    font-size: 12px;
+    height: 36px;
+    width: 12.5%;
+}
+
+div#dateForm ul.dateCol.firstCol li span {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.dateCol {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 0;
+}
+
+.dateCol li {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 12.5%;
+    height: 60px;
+    border-left: 1px solid #e1e1e1;
+    border-top: 1px solid #e1e1e1;
+    vertical-align: top;
+    font-size: 10px;
+}
+
+.dateCol:last-child li {
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.dateCol li:first-child {
+    border-left: 0;
+    padding-top: 14px;
+}
+
+.dateCol li.active {
+    color: #ffffff;
+    background-color: #4fc1e9;
+}
+
+a#dateTimeAbleButton {
+    display: block;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1em;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    position: absolute;
+    left: 50%;
+    margin-left: -146px;
+    background-color: #39bfa2;
+    width: 292px;
+    bottom: 14px;
+}
+
+.dateTimeSetting.modal {
+    width: 100%;
+    left: 0;
+    margin-top: -56.5px;
+    margin-left: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: none;
+    border-radius: 0;
+}
+
+.dateTimeSetting p {
+    font-size: 12px;
+    width: 292px;
+    color: #999999;
+    margin: 0px auto 12px auto;
+}
+
+.dateTimeSetting span{
+    color: #39bfa2;
+}
+
+.dateTimeSetting select {
+    border-color: #39bfa2;
+    width: 292px;
+    height: 35px;
+    padding-left: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.dateTimeSetting div {
+    width: 292px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #39bfa2;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+}

@@ -1,0 +1,366 @@
+<!--
+/*
+* AUTHOR: wyp
+* EMAIL: 1140664142@qq.com
+* CREATE TIME: 2015.1.28
+*/
+-->
+<div id="doctorInfoBody">
+    <div class="top_bar" ng-init="favorite=true">
+        <img src="app/static/image/return.png" ng-click="back()" width="16px" height="16px" />
+        <span>{{doctorInfo.name}}</span>
+        <img ng-show="!favorite&&hasLogin" src="app/static/image/noFavorite.png" ng-click="addFavorite()" width="20.5px" height="17.5px" class="top_bar_favorite">
+        <img ng-show="favorite&&hasLogin" src="app/static/image/favorite.png" ng-click="deleteFavorite()" width="20.5px" height="17.5px" class="top_bar_favorite">
+    </div>
+
+    <section id="doctorInfoLogo">
+        <img ng-src = "app/static/image/morenlogo.png" height="90px" width="69.5px">
+        <div>
+            {{doctorInfo.name}}
+            <div class="ui large rating UIdoctorRating disableRating  disableRatingactive">
+                <i class="icon"></i>
+                <i class="icon"></i>
+                <i class="icon"></i>
+                <i class="icon"></i>
+                <i class="icon"></i>
+            </div>
+        </div>
+        <p>{{doctorInfo.note}}</p>
+    </section>
+
+    <!-- <section id="doctorInfoTable">
+        <p>医生坐诊表</p>
+        <img ng-src="{{doctorInfo.}}">
+    </section> -->
+
+    <section id="doctorContactSection">
+        <p>医生互动</p>
+        <div>
+            <div class="green" ng-click="onlineChating()">
+                <img src="app/static/image/message.png" />
+                <span id="iii">在线问诊</span>
+            </div>
+            <div class="yellow" ui-sref="doctorBooking({doctorId:doctorId, clinicId:clinicId})">
+                <img src="app/static/image/booking.png" />
+                <span>就诊预约</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="doctorInfoBoard">
+        <p>医生评价</p>
+
+        <section>
+
+            <div class="boardMenu">
+                <div ng-click="showMyEvaluate=false" ng-class="{'active': !showMyEvaluate}">历史评价</div>
+                <div ng-click="showMyEvaluate=true" ng-class="{'active': showMyEvaluate}">我的评价</div>
+            </div>
+
+            <div>
+                <form class="ui reply form"  name="evaluateForm">
+
+                    <div class="giveEvaluateStar field">
+                        <div class="starsItem">
+                            <span>服务态度</span>
+                            <div class="ui star rating large active evaluateRate">
+                                <i class="icon"></i>
+                                <i class="icon"></i>
+                                <i class="icon"></i>
+                                <i class="icon"></i>
+                                <i class="icon"></i>
+                            </div>
+                        </div>
+                        <div class="starsItem">
+                            <span>医疗效果</span>
+                            <div class="ui star rating large active evaluateRate">
+                                <i class="icon"></i>
+                                <i class="icon"></i>
+                                <i class="icon"></i>
+                                <i class="icon"></i>
+                                <i class="icon"></i>
+                            </div>
+                        </div>
+                        <div class="starsItem">
+                            <span>收费合理性</span>
+                            <div class="ui star rating large active evaluateRate">
+                                <i class="icon"></i>
+                                <i class="icon"></i>
+                                <i class="icon"></i>
+                                <i class="icon"></i>
+                                <i class="icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <textarea ng-model="comment" required maxlength="100"></textarea>
+                    </div>
+
+                    <div class="clinicInfoBoardSubmit" ng-click="submit(evaluateForm.$valid)">
+                        评论
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="clinicComments" ng-show="!showMyEvaluate">
+                <div class="clinicComment" ng-repeat="message in board">
+
+                    <div class="content">
+
+                        <div class="lineHeight1em">
+                            <!-- <span class="author yellow">{{message.patientName}}</span> -->
+                            <span class="author">{{message.name}}</span>
+                            <span class="grey evaluateDate">{{message.date}}</span>
+                        </div>
+                        
+                        <div class="evaluateStars">
+                            <div class="starsItem">
+                                <span>服务态度</span>
+                                <div class="ui star disableRating rating active">
+                                    <i class="icon" ng-class="{'active':message.serve>0}"></i>
+                                    <i class="icon" ng-class="{'active':message.serve>1}"></i>
+                                    <i class="icon" ng-class="{'active':message.serve>2}"></i>
+                                    <i class="icon" ng-class="{'active':message.serve>3}"></i>
+                                    <i class="icon" ng-class="{'active':message.serve>4}"></i>
+                                </div>
+                            </div>
+                            <div class="starsItem">
+                                <span>医疗效果</span>
+                                <div class="ui star disableRating rating active">
+                                    <i class="icon" ng-class="{'active':message.result>0}"></i>
+                                    <i class="icon" ng-class="{'active':message.result>1}"></i>
+                                    <i class="icon" ng-class="{'active':message.result>2}"></i>
+                                    <i class="icon" ng-class="{'active':message.result>3}"></i>
+                                    <i class="icon" ng-class="{'active':message.result>4}"></i>
+                                </div>
+                            </div>
+                            <div class="starsItem">
+                                <span>收费合理性</span>
+                                <div class="ui star disableRating rating active">
+                                    <i class="icon" ng-class="{'active':message.price>0}"></i>
+                                    <i class="icon" ng-class="{'active':message.price>1}"></i>
+                                    <i class="icon" ng-class="{'active':message.price>2}"></i>
+                                    <i class="icon" ng-class="{'active':message.price>3}"></i>
+                                    <i class="icon" ng-class="{'active':message.price>4}"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="black text">
+                            {{message.evaluateNote}}
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="boardLength" ng-show="board.length!=null&&!showMyEvaluate">{{board.length}}</div>
+
+            <div class="clinicComments" ng-show="showMyEvaluate">
+                <div class="clinicComment" ng-repeat="message in myboard">
+
+                    <div class="content">
+
+                        <div class="lineHeight1em">
+                            <!-- <span class="author yellow">{{message.patientName}}</span> -->
+                            <span class="author">{{message.name}}</span>
+                            <span class="grey evaluateDate">{{message.date}}</span>
+                        </div>
+                        
+                        <div class="evaluateStars">
+                            <div class="starsItem">
+                                <span>服务态度</span>
+                                <div class="ui star disableRating rating active">
+                                    <i class="icon" ng-class="{'active':message.serve>0}"></i>
+                                    <i class="icon" ng-class="{'active':message.serve>1}"></i>
+                                    <i class="icon" ng-class="{'active':message.serve>2}"></i>
+                                    <i class="icon" ng-class="{'active':message.serve>3}"></i>
+                                    <i class="icon" ng-class="{'active':message.serve>4}"></i>
+                                </div>
+                            </div>
+                            <div class="starsItem">
+                                <span>医疗效果</span>
+                                <div class="ui star disableRating rating active">
+                                    <i class="icon" ng-class="{'active':message.result>0}"></i>
+                                    <i class="icon" ng-class="{'active':message.result>1}"></i>
+                                    <i class="icon" ng-class="{'active':message.result>2}"></i>
+                                    <i class="icon" ng-class="{'active':message.result>3}"></i>
+                                    <i class="icon" ng-class="{'active':message.result>4}"></i>
+                                </div>
+                            </div>
+                            <div class="starsItem">
+                                <span>收费合理性</span>
+                                <div class="ui star disableRating rating active">
+                                    <i class="icon" ng-class="{'active':message.price>0}"></i>
+                                    <i class="icon" ng-class="{'active':message.price>1}"></i>
+                                    <i class="icon" ng-class="{'active':message.price>2}"></i>
+                                    <i class="icon" ng-class="{'active':message.price>3}"></i>
+                                    <i class="icon" ng-class="{'active':message.price>4}"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="black text">
+                            {{message.evaluateNote}}
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="boardLength" ng-show="myboard.length!=null&&showMyEvaluate">{{myboard.length}}</div>
+
+        </section>
+
+    </section>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- <div>
+    <div ng-include="'app/views/top.html'"></div>
+     <img ng-show="!favorite" src="app/static/image/noFavorite .png" ng-click="addFavorite()">
+    <img ng-show="favorite" src="app/static/image/favorite.png" ng-click="deleteFavorite()">
+    <div class="ui segment">
+        <div class="ui relaxed grid">
+            <div class="middle aligned row">
+                <div class="one wide column"><h4 class="ui inverted teal block header"></h4></div>
+                <div class="fifteen wide column"><h4 class="ui header">医生简介</h4></div>
+            </div>
+            <div class="middle aligned row">
+                <div class="sixteen wide column">
+                    <img ng-src = "{{doctorInfo.photo}}" class="ui medium left floated image">
+                    <p>{{doctorInfo.name}}</p>
+                    <p>
+                    <div class = "ui rating active">
+                        <i class = "icon" ng-class="{'active':doctorInfo.level>0}"></i>
+                        <i class = "icon" ng-class="{'active':doctorInfo.level>1}"></i>
+                        <i class = "icon" ng-class="{'active':doctorInfo.level>2}"></i>
+                        <i class = "icon" ng-class="{'active':doctorInfo.level>3}"></i>
+                        <i class = "icon" ng-class="{'active':doctorInfo.level>4}"></i>
+                    </div>
+                    </p>
+                    <p>{{doctorInfo.note}}</p>
+                </div>
+            </div>
+            <div class="middle aligned row">
+                <div class="one wide column"><h4 class="ui inverted teal block header"></h4></div>
+                <div class="fifteen wide column"><h4 class="ui header">医生互动</h4></div>
+            </div>
+            <div class="middle aligned row">
+                <div class="eight wide column">
+                    <a class="fluid ui teal button" ui-sref="chatRoom({fromId:doctorId, clinicId:clinicId})">
+                        <i class="outline comment icon"></i>在线问诊
+                    </a>
+                </div>
+                <div class="eight wide column">
+                    <a class="fluid ui orange button" ui-sref="doctorBooking({doctorId:doctorId, clinicId:clinicId})">
+                        <i class="time icon"></i>就诊预约
+                    </a>
+                </div>
+            </div>
+            <div class="middle aligned row">
+                <div class="one wide column"><h4 class="ui inverted teal block header"></h4></div>
+                <div class="fifteen wide column"><h4 class="ui header">医生评价</h4></div>
+            </div>
+            <div class="middle aligned row">
+            </div>
+        </div>
+        <div class="ui fluid two item menu">
+            <a class="teal item" ng-click="history = true" ng-class="{'active':history}">历史评价</a>
+            <a class="teal item" ng-click="history = false" ng-class="{'active':!history}">我的评价</a>
+        </div>
+        <div ng-show="history">
+            <div class="ui comments segment" >
+                <div class="comment" ng-repeat="mess in messages">
+                    <div class="ui segment">
+                        <a class="author">匿名用户</a>
+                        <div class="metadata">
+                            <span class="date">{{mess.date}}</span>
+                        </div>
+                        <div class="text">
+                            <br/>
+                            服务态度&nbsp;&nbsp;
+                            <div class="ui star rating active">
+                                <i class="icon" ng-class="{'active':mess.serve>0}"></i>
+                                <i class="icon" ng-class="{'active':mess.serve>1}"></i>
+                                <i class="icon" ng-class="{'active':mess.serve>2}"></i>
+                                <i class="icon" ng-class="{'active':mess.serve>3}"></i>
+                                <i class="icon" ng-class="{'active':mess.serve>4}"></i>
+                            </div>
+                            <br/><br/>
+                            医疗效果&nbsp;&nbsp;
+                            <div class="ui star rating active">
+                                <i class="icon" ng-class="{'active':mess.result>0}"></i>
+                                <i class="icon" ng-class="{'active':mess.result>1}"></i>
+                                <i class="icon" ng-class="{'active':mess.result>2}"></i>
+                                <i class="icon" ng-class="{'active':mess.result>3}"></i>
+                                <i class="icon" ng-class="{'active':mess.result>4}"></i>
+                            </div>
+                            <br/><br/>
+                            收费合理性&nbsp;
+                            <div class="ui star rating active">
+                                <i class="icon" ng-class="{'active':mess.price>0}"></i>
+                                <i class="icon" ng-class="{'active':mess.price>1}"></i>
+                                <i class="icon" ng-class="{'active':mess.price>2}"></i>
+                                <i class="icon" ng-class="{'active':mess.price>3}"></i>
+                                <i class="icon" ng-class="{'active':mess.price>4}"></i>
+                            </div><br/>
+                            <div class="ui divider"></div>
+                            <div class="note">{{mess.evaluateNote}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            submit comment
+            <form class="ui reply form segment" name="evaluateForm">
+                <div class="field">
+                    服务态度&nbsp;&nbsp;
+                    <div class="ui star rating active evaluateRate">
+                        <i class="icon"></i>
+                        <i class="icon"></i>
+                        <i class="icon"></i>
+                        <i class="icon"></i>
+                        <i class="icon"></i>
+                    </div>
+                    <br/>
+                    医疗效果&nbsp;&nbsp;
+                    <div class="ui star rating active evaluateRate">
+                        <i class="icon"></i>
+                        <i class="icon"></i>
+                        <i class="icon"></i>
+                        <i class="icon"></i>
+                        <i class="icon"></i>
+                    </div>
+                    <br/>
+                    收费合理性&nbsp;
+                    <div class="ui star rating active evaluateRate">
+                        <i class="icon"></i>
+                        <i class="icon"></i>
+                        <i class="icon"></i>
+                        <i class="icon"></i>
+                        <i class="icon"></i>
+                    </div>
+                </div>
+                <div class="field">
+                    <textarea ng-model="comment" required></textarea>
+                </div>
+                <button class="ui fluid teal labeled submit icon button" ng-click="submit(evaluateForm.$valid)">
+                    <i class="icon edit"></i> 评论
+                </button>
+            </form>
+        </div>
+    </div>
+</div> -->

@@ -1,0 +1,39 @@
+<!--
+/*
+* AUTHOR: wyp
+* EMAIL: 1140664142@qq.com
+* CREATE TIME: 2015.1.28
+*/
+-->
+<div ng-include="'app/views/top.html'"></div>
+<!-- <div class="ui segment">
+    <div ng-repeat="index in dayIndex">
+        <div class="ui segment" ng-repeat="time in doctorInfo[day[index]]">
+            <div class=" ui relaxed grid">
+                <div class="middle aligned row">
+                    <div class="three wide column">
+                    </div>
+                    <div class="three wide column">
+                        {{chDay[index]}}
+                    </div>
+                    <div class="three wide column">
+                        {{time.time}}
+                    </div>
+                    <div class="three wide column">
+                    </div>
+                    <div class="four wide column">
+                        <button class="ui fluid teal button" ng-click="booking(day[index], time.time)">
+                            <i class="time icon"></i>预约
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div ng-repeat="item in myFree" class="dateTimeChooseItems">
+            <p>{{item.date}}</p>
+            <p><span>{{item.weekday}}</span><span>{{item.time}}</span></p>
+            <div class="dateTimeChooseActive" ng-show="item.count < item.max" ng-click="booking(item.weekday, item.time)">可预约</div>
+            <div class="dateTimeChooseNegative" ng-show="item.count == item.max">预约已满</div>
+        </div>

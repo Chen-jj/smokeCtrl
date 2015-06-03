@@ -1,0 +1,53 @@
+<div id="hMMemberListBody" ng-init="dataListModiflyAble=false;showAddingNewMember=false;">
+
+  <!--    显示家庭成员列表页面   -->
+  <div ng-show="!showAddingNewMember">
+
+    <div class="top_bar">
+        <img src="app/static/image/return.png" ng-click="back()" width="16px" height="16px" />
+        <span>{{title}}</span>
+        <img src="app/static/image/dateList_modifly.png" width="20.5px" height="17.5px" class="top_bar_favorite" ng-click="dataListModiflyAble=true" ng-show="!dataListModiflyAble">
+        <img src="app/static/image/dateList_finish.png" width="20.5px" height="17.5px" class="top_bar_favorite" ng-click="dataListModiflyAble=false" ng-show="dataListModiflyAble">
+    </div>
+
+    <!--  家庭成员列表  -->
+    <div class="memberListItems" ng-repeat="member in members">
+        <!--  每一项  -->
+        <div class="memberListItem" ui-sref="healthManageUserDetail({'memberName': member.memberID})">
+          <img class="memberImg" ng-src="app/static/image/morenlogo.png">
+          <p>{{member.relationship}}<span>{{member.birthday}}岁</span></p>
+          <p>身高：{{member.height}}cm</p>
+          <p>体重：{{member.weight}}kg</p>
+          <img class="dateListArrow" src="app/static/image/go.png" ng-hide="dataListModiflyAble&&member.name!='myself'">
+        </div>
+        <img class="dateListRubbish" src="app/static/image/booking_delete.png" ng-show="dataListModiflyAble&&member.name!='myself'" width="40px" height="40px"  ng-click="removeDate($index)">
+
+    </div>
+
+    <div class="my-green-button" ng-click="showAddingNewMember=true">添加家庭成员</div>
+
+  </div>
+
+  <!--    显示添加家庭成员页面    -->
+  <div ng-show="showAddingNewMember">
+
+    <div class="top_bar">
+        <img src="app/static/image/return.png" ng-click="showAddingNewMember=false" width="16px" height="16px" />
+        <span>添加新家庭成员</span>
+    </div>
+
+    <div id="addMembersInputs">
+        <form name="addMemberForm">
+            <input type="text" name="Mname" ng-model="Mname" placeholder="请输入新成员的名字" autocomplete="off"/>
+            <input type="text" name="Mrelationship" ng-model="Mrelationship" placeholder="请输入与新成员的亲戚关系" autocomplete="off"/>
+        </form>
+    </div>
+
+    <section class="form-alert"></section>
+
+    <div class="my-green-button" id="commitAddMemberButton" ng-click="addMember()">确定添加</div>
+
+  </div>
+
+<div>
+

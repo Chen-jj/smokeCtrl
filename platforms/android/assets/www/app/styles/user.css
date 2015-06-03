@@ -1,0 +1,225 @@
+#userMenuImage {
+    background: url('../static/image/background1.png') no-repeat;
+    background-size: 100% 100%;
+}
+#head{
+    width : 106px;
+    position: relative;
+    margin: 0 auto;
+}
+#headImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 30px;
+    border: 3px solid white;
+}
+#male {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 65%;
+    top: 70%;
+    padding: 5px;
+}
+#female {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 65%;
+    top: 70%;
+    padding: 5px;
+}
+
+.userName {
+    text-align: center;
+    color: white;
+}
+
+.userMenu {
+    width: 100%;
+    background: rgba(0,0,0,0.2);
+    font-size: 0;
+    color: white;
+    padding: 2% 0% 2% 0%;
+    margin-top: 20px;
+}
+
+.myBooking, .myNews {
+    font-size: 15px;
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+}
+
+.myBooking div, .myNews div {
+    margin-bottom: 2px;
+}
+.myNews div img:first-child {
+    position: absolute;
+    margin-left: 18px;
+    margin-top: -5px;
+}
+/* .myBooking, .myNews, .myWallet {
+    font-size: 15px;
+    width: 33.3%;
+    display: inline-block;
+    text-align: center;
+}
+
+.myBooking div, .myNews div, .myWallet div {
+    margin-bottom: 2px;
+} */
+
+.userGinfo {
+    background: white;
+    padding: 0px 15px;
+}
+
+.userG {
+    width: 100%;
+    padding: 16px 0;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.userG:last-child {
+    border-bottom: none;
+}
+
+.userNickName, .userPhone, .userEmail {
+    width: 2em;
+    color: #565656;
+}
+
+.myCollect {
+    background: white;
+    margin-top: 15px;
+    padding: 0px 15px;
+}
+
+.myCollect span {
+    width: 2em;
+    color: #565656;
+}
+
+.myCollection {
+    width: 100%;
+    padding: 16px 0;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.myCollection:last-child {
+    border-bottom: none;
+}
+
+#userInfo_logoutButton {
+    width: 292px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #f54964;
+    text-align: center;
+    margin: 25px auto 10px;
+    padding-top: 8.5px;
+    padding-bottom: 8.5px;
+}
+
+#chooseLogo {
+    padding: 2%;
+    position: relative;
+}
+
+#chooseLogo p {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#chooseLogo input[name=image] {
+    width: 40%;
+    height: 40px;
+    position: absolute;
+    left: 30%;
+    margin: 0 auto;
+    top: 2%;
+    opacity: 0;
+}
+
+#chooseLogo input[type=button] {
+    border: 1px solid #39bfa2;
+    height: 30px;
+    width: 40%;
+    padding: 3px;
+    background: white;
+    color: #39bfa2;
+    font-size: 20px;
+    margin-left: 30%;
+}
+
+#chooseLogo button {
+    border: none;
+    height: 40px;
+    width: 40%;
+    background: #39bfa2;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 30%;
+    margin-bottom: 20px;
+}
+
+#userMenuContent {
+    min-width: 320px;
+}
+
+.userInfoGoLogo {
+    vertical-align: middle;
+    float: right;
+    width: 8px;
+    height: 13px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-left: 10px;
+}
+
+.userInfoArticle {
+    float: right;
+    color: #999999;
+}
+
+.editFieldSlideUpBefore {
+    transition: height 0.1s ease-in;
+    height: 0;
+    width: 100%;
+    min-width: 320px;
+    background-color: #E9E9E9;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.editFieldSlideUp {
+    transition: height 0.2s ease-in;
+    height: 100%;
+}
+
+.userMenuContentshort {
+    height: 100%;
+    overflow: hidden;
+}
+
+#userInfoEditFieldInputs {
+    margin-top: 10px;
+    background-color: #ffffff;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+#userInfoEditFieldInputs input {
+    border: none;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #39bfa2;
+}
+
+#userInfoEditFieldInputs input:focus {
+    outline: none;
+}

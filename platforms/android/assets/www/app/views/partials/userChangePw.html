@@ -1,0 +1,27 @@
+<!--
+/*
+* AUTHOR: wyp
+* EMAIL: 1140664142@qq.com
+* CREATE TIME: 2015.1.28
+*/
+-->
+<div>
+    <div ng-include="'/views/top.html'"></div>
+    <div class="ui divider"></div>
+    <div class="ui form">
+        <div class="field">
+            <label>旧密码</label>
+            <input type="password" ng-model="oldPw">
+        </div>
+        <div class="field">
+            <label>新密码</label>
+            <input type="password" ng-model="newPw">
+        </div>
+        <div class="field">
+            <label>重复新密码</label>
+            <input type="password" ng-model="rePw">
+        </div>
+    </div>
+    <div class="ui divider"></div>
+    <button ng-click="save()" class="ui button">保存修改</button>
+</div>

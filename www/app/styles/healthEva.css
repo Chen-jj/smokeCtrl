@@ -1,0 +1,44 @@
+#healthEvaBody {
+	width: 100%;
+	min-width: 320px;
+}
+
+#healthEvaBody .list .item {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#healthEvaBody .item-select select {
+  padding-top: 18px;
+}
+
+#healthEvaBody .item.wrap, #healthEvaBody .item.wrap p {
+  overflow: visible;
+  text-overflow: initial;
+  white-space: inherit;
+}
+
+#healthEvaBody .item span.width7em {
+  display: inline-block;
+  width: 7em;
+}
+
+#healthEvaBody .item button {
+    box-sizing: -webkit-border-box;
+    box-sizing: border-box;
+    background-color: #558ed5;
+    border-color: #558ed5;
+    color: white;
+}
+
+#healthEvaBody .item  button.button-full {
+    border-radius: none;
+    border-left-width: 1px;
+    border-right-width: 1px;
+}
+
+#healthEvaBody table td {
+  border: 1px solid #e1e1e1;
+  padding: 5px 2px;
+  text-align: center;
+}

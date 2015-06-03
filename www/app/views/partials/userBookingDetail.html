@@ -1,0 +1,29 @@
+<!--
+/*
+* AUTHOR: wyp
+* EMAIL: 1140664142@qq.com
+* CREATE TIME: 2015.1.28
+*/
+-->
+<div ng-include="'app/views/top.html'"></div>
+<div class = "ui segment">
+    <div class="ui grid">
+        <div class="middle aligned row">
+            <div class="four wide column">
+                <img class="fluidImg" ng-src="{{doctorInfo.photo}}" >
+            </div>
+            <div class="twelve wide column">
+                <div class="bookName">{{doctorInfo.name}}</div>
+                <div class="bookDate">
+                     <img ng-click="showMap = !showMap" src="app/static/image/loc.png" width="32px" height="32px">
+                     {{clinicInfo.name}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui divider"></div>
+    <div class="time">预约时间</div>
+    <div>{{bookingDetail.bookingTime}}</div>
+    <div class="ui divider"></div>
+    <div ng-show="showMap"><img ng-src="{{imageSrc}}"></div>
+</div>

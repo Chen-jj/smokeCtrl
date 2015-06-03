@@ -1,0 +1,48 @@
+<!--
+/*
+* AUTHOR: wyp
+* EMAIL: 1140664142@qq.com
+* CREATE TIME: 2015.1.28
+*/
+-->
+<div ng-include="'app/views/top.html'"></div>
+<div class="ui divider"></div>
+<!--    资料  -->
+        <div class="ui form segment" ng-init="myInit()">
+            <div class="one fields">
+                <div class = "fields">头像：<img class="small circular ui image" ng-src="{{userInfo.photo[0]}}"></div>
+                <form enctype="multipart/form-data" >
+                    <input name="image" type="file" />
+                    <input type="button" value="Upload" ng-click="uploadLogo()"/>
+                </form>
+                <div class = "fields">性别:
+                    <div class="ui dropdown item">
+                        <div class="text">{{userInfo.gender}}</div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <div class="item" ng-click="userInfo.gender='男'">男</div>
+                            <div class="item" ng-click="userInfo.gender='女'">女</div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "fields">姓名：<input class="large ui input" ng-model="userInfo.name"></div>
+                <div class = "fields">手机：<input class="large ui input" ng-model="userInfo.mobilePhone"></div>
+                <!--div class = "fields">固话：<input class="large ui input" ng-model="userInfo.telephone"></div-->
+                <div class = "fields">邮箱：<input class="large ui input" ng-model="userInfo.mail"></div>
+                <div class = "fields">别名：<input class="large ui input" ng-model="userInfo.nickname"></div>
+            </div>
+        </div>
+
+<div class="ui form segment">
+    <div class = "two fields">
+        <div class = "one fields"><button id="myEdit" class="ui button" ng-click="edit()">编辑</button></div>
+        <div class = "one fields"><button id="mySave" class="ui button" ng-click="save()">保存</button></div>
+    </div>
+</div>
+
+
+<div class="ui divider"></div>
+<div class="ui fluid vertical menu">
+    <a class="item" ui-sref="userChangePw">修改密码</a>
+    <a class="item" ng-click="logout()">安全退出</a>
+</div>

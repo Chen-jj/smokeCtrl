@@ -1,0 +1,87 @@
+<div id="doctorList">
+
+    <!--导航栏-->
+    <div class="returnPic">
+        <img src="app/static/image/return.png" ng-click="back()" width="16px" height="16px" />
+        <span>{{title}}</span>
+        <span class="reorderIconSpan" ng-click="sidebar()"><i class="search icon"></i></span>
+    </div>
+
+    <!---->
+    <div class="listStatus">
+        {{doctorListStatus}}
+    </div>
+
+    <!--图标:等待中-->
+    <div class="waitingIconDiv" ng-show="wait">
+        <i class="large teal loading icon"></i>
+    </div>
+
+    <!--搜索结果-->
+    <div ng-show="!wait">
+
+        <div ng-repeat="doctor in doctors" class="clinicListItem" ui-sref="doctorInfo({clinicId : doctor.clinicID, doctorId: doctor.uuid})">
+            <img src="{{doctor.photo}}" width="80px" height="80px" alt="医生暂无图片">
+            <h3>{{doctor.name}}</h3>
+            <p><img src="app/static/image/loc.png" width="17px" height="16px" />{{doctor.clinic}}<p4>
+            <div class = "ui teal star rating active" ng-init="ratingInit(clinic.rating, $index)">
+              <i class = "icon"></i>
+              <i class = "icon"></i>
+              <i class = "icon"></i>
+              <i class = "icon"></i>
+              <i class = "icon"></i>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <button class="my-green-button loadMoreButton" ng-click="load()" ng-show="canLoad">加载更多</button>
+</div>
+
+<div class="mask" ng-init="showMask=false" ng-show="showMask" ng-click="sidebar()"></div>
+
+<div class="ui thin sidebar" id="clinicListSidebar">
+    <!--信息选择栏目-->
+    <section id="clinicListMsgChoose">
+        <!--地区选择栏-->
+        <div class="areaSel">
+
+            <div class="ui icon input width85per" id="clinicListNameInputDiv">
+              <input type="text" placeholder="请输入医生名称..." ng-model="searchDoctorName" maxlength="10">
+            </div>
+            <button class="my-green-button width85per" ng-click="find(1,1,true);canLoad=false;">按医生名搜索</button>
+            
+            <div class="ui divider clinicListDivider"></div>
+
+            <!-- <div hidden> -->
+                <div class="my-select">  
+                    <span id="provSpan">广东省</span>
+                    <img src="app/static/image/clinicInfoRoom_down.png" />
+                    <select id="seachprov" name="seachprov" onChange="changeComplexProvince(this.value, sub_array, 'seachcity', 'seachdistrict');"></select> 
+                </div>
+
+                <div class="my-select">  
+                    <span id="citySpan">请选择</span>
+                    <img src="app/static/image/clinicInfoRoom_down.png" />
+                    <select id="seachcity" name="homecity" onChange="changeCity(this.value,'seachdistrict','seachdistrict');"></select> 
+                </div>
+
+                <div class="my-select" id="seachdistrictSelect">  
+                    <span id="areaSpan">请选择</span>
+                    <img src="app/static/image/clinicInfoRoom_down.png" />
+                    <select id="seachdistrict" name="seachdistrict" onChange="changeArea(this.value);"></select>
+                </div>
+                 <button class="my-green-button width85per" ng-click="find(0,1,true);canLoad=false;">区域检索</button>
+                 <div class="ui divider clinicListDivider"></div>
+            <!-- </div> -->
+            
+            
+
+            <button class="my-green-button width85per" ng-click="find(2,1,true);canLoad=false;clinicListStatus='我的收藏'">我的收藏</button>
+
+            <div class="ui divider clinicListDivider"></div>
+        </div>
+
+    </section>
+</div>

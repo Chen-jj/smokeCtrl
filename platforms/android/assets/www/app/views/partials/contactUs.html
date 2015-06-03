@@ -1,0 +1,18 @@
+<div id="contactUsBody">
+	
+    <div ng-include="'app/views/top.html'"></div>
+
+	<section id="contactUsSection">
+		<form name="contactUsForm">
+			<textarea name="message" placeholder="请输入您的宝贵建议，我们将为您不断改进。" ng-model="message" autofocus="autofocus" autocomplete="off"></textarea>
+			<input name="contact" type="text" placeholder="请添加邮箱或手机号以便我们回复您" ng-model="contact" autocomplete="off"/>
+
+			<div>
+            	<section class="form-alert"></section>
+            </div>
+
+			<button class="my-green-button" ng-click="submit()">发送</button>
+		</form>
+	</section>
+
+</div>

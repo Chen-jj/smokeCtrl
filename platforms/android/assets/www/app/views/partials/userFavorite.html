@@ -1,0 +1,49 @@
+<!-- /*
+* AUTHOR: weapon
+* EMAIL: 2385367768@qq.com
+* EDIT TIME: 2015.3.12
+*/ -->
+
+<div ng-include="'app/views/top.html'"></div>
+
+<div class="twoMenu">
+<a><p ng-click="showClinics()" ng-class="{'twoMenuPHover': isClinic}">诊所</p></a>
+<a><p ng-click="showDoctors()" ng-class="{'twoMenuPHover': !isClinic}">医生</p></a>
+</div>
+
+<div ng-repeat="clinic in clinics" ng-show="isClinic">
+	<div ui-sref="clinicInfo({clinicId:clinic.clinicID})" class="clinicInfo">
+		<img class="clinicImg" src="{{clinic.photo[0]}}">
+		<div class="clinicIntro">
+			<p>{{clinic.name}}</p>
+			<p>距离：{{clinic.dist}}</p>
+			<div class = "ui teal star rating active" ng-init="ratingInit(clinic.rating, $index)">
+	            <i class = "icon"></i>
+	            <i class = "icon"></i>
+	            <i class = "icon"></i>
+	            <i class = "icon"></i>
+	            <i class = "icon"></i>
+	        </div>
+		</div>
+		<img src="app/static/image/go.png" class="goImg">
+	</div>
+</div>
+
+<div ng-repeat="doctor in doctors" ng-show="!isClinic">
+	<div ui-sref="doctorInfo({clinicId:doctor.clinicID,doctorId:doctor.uuid})" class="clinicInfo">
+		<img class="clinicImg" src="{{doctor.photo}}">
+		<div class="clinicIntro">
+			<p>{{doctor.name}}</p>
+			<p>{{doctor.clinic}}</p>
+			<div class = "ui teal star rating active" ng-init="ratingInit(doctor.level, $index)">
+	            <i class = "icon"></i>
+	            <i class = "icon"></i>
+	            <i class = "icon"></i>
+	            <i class = "icon"></i>
+	            <i class = "icon"></i>
+	        </div>
+		</div>
+		<img src="app/static/image/go.png" class="goImg">
+	</div>
+	
+</div>

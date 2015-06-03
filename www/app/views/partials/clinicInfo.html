@@ -1,0 +1,234 @@
+<!--
+/*
+* AUTHOR: wyp
+* EMAIL: 1140664142@qq.com
+* CREATE TIME: 2015.1.28
+*/
+-->
+<div>
+    <div class="top_bar" ng-init="favorite=true">
+        <img src="app/static/image/return.png" ng-click="back()" width="16px" height="16px" />
+        <span>{{clinicInfo.name}}</span>
+        <img ng-show="(!favorite)&&hasLogin" src="app/static/image/noFavorite.png" ng-click="addFavorite()" width="20.5px" height="17.5px" class="top_bar_favorite">
+        <img ng-show="favorite&&hasLogin" src="app/static/image/favorite.png" ng-click="deleteFavorite()" width="20.5px" height="17.5px" class="top_bar_favorite">
+    </div>
+</div>
+
+<div id="clinicInfoBody">
+
+    <nav class="{{currentPage}}">
+        <ul>
+            <li id="clinic" ng-click='currentPage="clinic";showRoomList=false;'>诊所详情</li>
+            <li id="room" ng-init="showRoomList=false" ng-click='showRoomList=!showRoomList;'>
+                科室详情
+                <img src="app/static/image/clinicInfoRoom_down.png" ng-show="!showRoomList" width="11px" height="6px"/>
+                <img src="app/static/image/clinicInfoRoom_up.png" ng-show="showRoomList" width="11px" height="6px"/>
+                <div id="clinicInfoRoomList" ng-show="showRoomList">
+                    <div ng-repeat="office in clinicInfo.departments" class="roomItem" ng-click="findOffice(office.name)">
+                        {{office.name}}
+                    </div>
+                </div>
+            </li>
+            <li id="board" ng-click='currentPage="board";showRoomList=false;'>评价建议</li>
+        </ul>
+    </nav>
+
+    <div id="clinicPage" ng-show="currentPage=='clinic'">
+        <section class="clinicImgs">
+            <img ng-src="app/static/image/hospital.jpg" width="94px" height="70px" />
+            <img ng-src="app/static/image/hospital.jpg" width="94px" height="70px" />
+            <img ng-src="app/static/image/hospital.jpg" width="94px" height="70px" />
+        </section>
+
+        <section class="clinicIntroduction">
+            <p>
+                诊所简介
+            </p>
+            <div ng-click="showClinicIntroduction=!showClinicIntroduction">
+                <span  ng-show="showClinicIntroduction">收起</span>
+                <span  ng-show="!showClinicIntroduction">展开</span>
+            </div>
+            <p ng-init="showClinicIntroduction=true" ng-show="showClinicIntroduction" class="clinicDetailSecondP">
+                {{clinicInfo.introduction}}
+            </p>
+        </section>
+
+        <section class="clinicDetail">
+            <p>
+                最新公告
+            </p>
+            <div ui-sref="clinicNews({clinicId : clinicID})">
+                <img src="app/static/image/go.png"/>
+            </div>
+            <p class="clinicDetailSecondP">
+                {{announcement.title}}
+            </p>
+        </section>
+
+        <!-- <section class="clinicDetail" id="clinicDetailMapDiv" ng-click="showMap=!showMap; setMap();"> -->
+        <section class="clinicDetail" id="clinicDetailMapDiv">
+            <p>
+                诊所地址
+            </p>
+            <div id="clinicDetailMapTagDiv">
+                <img src="app/static/image/loc.png" width="20px" height="20px" />
+            </div>
+            <p class="clinicDetailSecondP">
+                {{clinicInfo.address}}
+            </p>
+            <div id="l-map" ng-show="showMap" onclick="event.stopPropagation();"></div>
+        </section>
+
+        <section class="clinicDetail">
+            <p>
+                诊所电话
+            </p>
+            <div>
+                <img src="app/static/image/call.png" width="20px" height="20px"/>
+            </div>
+            <p class="clinicDetailSecondP">
+                {{clinicInfo.phone}}
+            </p>
+        </section>
+
+        <section id="clinicMark">
+            <p>
+                诊所评分
+            </p>
+            <div>
+                <span>服务态度</span>
+                <div class="ui large rating active">
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                </div>
+                <br />
+                <span>医疗效果</span>
+                <div class="ui large rating active">
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                </div>
+                <br />
+                <span>收费合理性</span>
+                <div class="ui large rating active">
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="roomPage" ng-show="currentPage=='room'">
+        <section class="clinicImgs">
+            <img ng-src="app/static/image/dep.jpg" width="94px" height="70px" />
+            <img ng-src="app/static/image/dep.jpg" width="94px" height="70px" />
+            <img ng-src="app/static/image/dep.jpg" width="94px" height="70px" />
+        </section>
+
+        <section class="clinicIntroduction">
+            <p>
+                {{dep.name}}简介
+            </p>
+            <div ng-click="showDepIntroduction=!showDepIntroduction">
+                <span  ng-show="showDepIntroduction">收起</span>
+                <span  ng-show="!showDepIntroduction">展开</span>
+            </div>
+            <p ng-init="showDepIntroduction=false" id="depIntroductionP" ng-class="{'depIntroductionPActive': showDepIntroduction}">
+                {{dep.introduction}}
+            </p>
+        </section>
+
+
+        <section class="clinicDetail">
+            <p>
+                医生列表
+            </p>
+            <a ng-repeat="doctor_ in doctorIdAndName" class="clinicInfo_doctorsName" ui-sref="doctorInfo({clinicId: clinicInfo.clinicID, doctorId: doctor_.uuid})">
+                {{doctor_.name}}
+                <img src="app/static/image/doctor.png" width="13px" height="16px"/>
+            </a>
+        </section>
+
+
+        <section class="clinicDetail">
+            <p>
+                科室坐诊表
+            </p>
+            <img id="clinicInfo_roomTimeTable" ng-src="{{dep.timeTable[0]}}" />
+        </section>
+
+    </div>
+
+    <div id="boardPage" ng-show="currentPage=='board'">
+
+        <div class="boardMenu">
+            <div ng-click="showComplaint=false" ng-class="{'active': !showComplaint}">留言板</div>
+            <div ng-click="showComplaint=true" ng-class="{'active': showComplaint}">投诉</div>
+        </div>
+
+        <div>
+            <form class="ui reply form" name="msgboardForm">
+                <div class="field">
+                    <textarea ng-model="comment" required maxlength="100"></textarea>
+                </div>
+                <div class="clinicInfoBoardSubmit" ng-click="submitMsg(msgboardForm.$valid)">
+                    评论
+                </div>
+            </form>
+        </div>
+
+        <div class="clinicComments" ng-show="!showComplaint">
+            <div class="clinicComment" ng-repeat="message in msgboard">
+                <img ng-src="{{message.patientPhoto}}" ng-hide="message.isReply" width="34px" height="34px" />
+                <img ng-src="{{message.doctorPhoto}}" ng-show="message.isReply"  width="34px" height="34px" />
+                <div class="content">
+                    <a class="author colorGreen">{{message.doctorName}}</a>
+                    <span ng-show="message.isReply" class="grey"> 回复 </span>
+                    <a class="author">{{message.patientName}}</a>
+
+                    <div class="text">
+                        {{message.messageNote}}
+                    </div>
+
+                    <div class="metadata">
+                        <span class="date grey">{{message.date}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="boardLength" ng-show="msgboard.length!=0&&!showComplaint">{{msgboard.length}}</div>
+
+        <div class="clinicComments" ng-show="showComplaint">
+            <div class="clinicComment" ng-repeat="cpl in complaint" ng-click="cpl.reply?showReply=!showReply:showReply=false">
+                <img ng-src="{{cpl.patientPhoto}}" ng-hide="cpl.isReply" width="34px" height="34px" />
+                <img ng-src="{{cpl.doctorPhoto}}" ng-show="cpl.isReply"  width="34px" height="34px" />
+                <div class="content">
+                    <a class="author colorGreen">{{cpl.doctorName}}</a>
+                    <span ng-show="cpl.isReply" class="grey"> 回复 </span>
+                    <a class="author">{{cpl.patientName}}</a>
+
+                    <div class="text">
+                        {{cpl.messageNote}}
+                    </div>
+
+                    <div class="metadata">
+                        <span class="date grey">{{cpl.date}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="boardLength" ng-show="complaint.length!=0&&showComplaint">{{complaint.length}}</div>
+
+    </div>
+
+</div>

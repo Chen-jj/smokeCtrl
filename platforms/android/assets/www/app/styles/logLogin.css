@@ -1,0 +1,69 @@
+.loginBody {
+	height: 100%;
+	width: 100%;
+	min-width: 320px;
+	background-color: #ffffff;
+}
+
+.login {
+	padding: 4% 4% 0% 4%;
+}
+
+.login img {
+	width: 20px;
+	height: 20px;
+	vertical-align: text-bottom;
+	margin-right: 5px;
+}
+
+.loginNum, .loginPw {
+	margin-top: 20px;
+	height: 30px;
+	color: #999999;
+	border-bottom: 1px solid #e1e1e1;
+}
+
+.login input {
+	line-height: 30px;
+	border: none;
+	outline: none;
+	margin-left: 5px;
+	color: #d6d6d6;
+	font-size: 15px;
+	padding-left: 5px;
+}
+
+.theTwo {
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 180px;
+}
+
+.loginButton, .registerButton {
+	width: 100%;
+	border: none;
+	padding: 9px 0;
+	font-size: 16px;
+}
+
+.loginButton {
+	background: #39bfa2;
+	color: white;
+}
+
+.registerButton {
+	border: solid 1px #39bfa2;
+	background: white;
+	color: #39bfa2;
+	margin-top: 15px;
+}
+
+.forgetPw {
+	width: 90%;
+	display: inline-block;
+	text-decoration: none;
+	text-align: right;
+	font-size: 16px;
+	color: #eac136;
+	margin-top: 15px;
+}

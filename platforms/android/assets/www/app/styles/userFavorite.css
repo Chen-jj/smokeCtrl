@@ -1,0 +1,62 @@
+/*
+* AUTHOR: weapon
+* EMAIL: 2385367768@qq.com
+* EDIT TIME: 2015.3.12
+*/
+
+.twoMenu {
+	background: white;
+	padding: 2% 0% 0 0%;
+	border: none;
+	/*margin-bottom: 10px;*/
+}
+
+.twoMenu a {
+	text-decoration: none;
+	color: black;
+}
+
+.twoMenu a:hover {
+	text-decoration: none;
+	color: #39bfa2;
+}
+
+.twoMenu p {
+	width: 49%;
+	display: inline-block;
+	text-align: center;
+	padding-bottom: 2%;
+	font-size: 20px;
+}
+
+.twoMenuPHover {
+	border-bottom: 3px solid #39bfa2;
+}
+
+.clinicInfo {
+	padding: 2%;
+	border-bottom: 1px solid #e1e1e1;
+}
+
+.clinicInfo .clinicImg{
+	width: 80px;
+	height: 80px;
+	vertical-align: middle;
+}
+
+.clinicIntro {
+	width: 60%;
+	height: 100%;
+	color: #999999;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.clinicIntro p {
+	white-space: nowrap;
+	padding: 2px;
+}
+
+.goImg {
+	vertical-align: middle;
+}

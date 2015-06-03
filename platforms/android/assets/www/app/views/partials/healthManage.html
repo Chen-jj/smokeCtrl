@@ -1,0 +1,113 @@
+<!--
+/*
+* AUTHOR: wyp
+* EMAIL: 1140664142@qq.com
+* CREATE TIME: 2015.1.31
+*/
+-->
+<div id="healthManageBody" ng-init="showAddTagData=false">
+
+    <div ng-show="!showAddTagData">
+        <div ng-include="'app/views/top.html'"></div>
+        
+        <section id="healthManage_base">
+            <div id="healthManage_mybase">
+                <img ng-src="{{userInfo.photo}}" ui-sref="healthManageUserDetail({memberName: 'myself', userName: userInfo.name, logo: userInfo.photo})" />
+                <p>当前健康状况</p>
+                <div>
+                <!-- 
+                    <span>高血压</span>
+                    <span>低血糖</span>
+                    <span>高血脂</span> 
+                -->
+                    <span>良好</span>
+                </div>
+            </div>
+
+            <div id="healthManage_familybase">
+                <span>家庭成员</span>
+                <div class="my-select" id="hMFamilySeclect">  
+                    <span>{{members[currentPerson].relationship}}</span>
+                    <img src="app/static/image/clinicInfoRoom_down.png" />
+                    <select ng-model="currentMember" ng-options="m.relationship for m in members" ng-change="attachSelect();">
+                        <option value="">-- 请选择 --</option>
+                    </select>
+                </div>
+                <img src="app/static/image/add.png" ui-sref="healthManageMemberList"/>
+            </div>
+        </section>
+
+        <section id="healthManageMenu">
+            <p>基本状况</p>
+            
+            <nav id="hMMenuNav" ng-init="currentTag='血压'">
+                <ul>
+                    <li ng-class="{'activeHMNav': currentTag=='血压'}" ng-click="changeTag('血压')">血压</li>
+                    <li ng-class="{'activeHMNav': currentTag=='血糖'}" ng-click="changeTag('血糖')">血糖</li>
+                </ul>
+            </nav>
+
+            <section id="hMMenuBody">
+                <p>今日最早记录：<span>{{beginTime}}</span></p>
+                <p>今日最后记录：<span>{{endTime}}</span></p>
+                <div id="echarts_bar"></div>
+                <button class="my-grey-button" ng-click="showAddTagDataFun()">添加数据</button>
+            </section>
+
+        </section>
+        
+
+        <button class="long my-green-button" ui-sref="healthManageUserHistory({memberID: members[currentPerson].memberID, type: currentTag})">查看所有数据</button>
+    </div>
+
+    <div ng-show="showAddTagData">
+
+        <div class="returnPic">
+            <img src="app/static/image/return.png" ng-click="showAddTagData=false" width="16px" height="16px" />
+            <span>添加{{currentTag}}记录</span>
+        </div>
+
+        <div id="addTagDataTable">
+            <form name="addTagDataForm">
+                <div>
+                    <span>日期</span>
+                    <span class="paddingTop18px">{{today.day}}</span>
+                </div>
+                <div>
+                    <span>时间</span>
+                    <span class="paddingTop18px">{{today.time}}</span>
+                </div>
+                <div ng-show="currentTag=='血压'">
+                    <span>收缩压(mmHg)</span>
+                    <span>
+                        <input type="text" name="dbp" ng-model="dbp" placeholder="请输入收缩压" autocomplete="off"/>
+                    </span>
+                </div>
+                <div ng-show="currentTag=='血压'">
+                    <span>舒张压(mmHg)</span>
+                    <span>
+                        <input type="text" name="sbp" ng-model="sbp" placeholder="请输入舒张压" autocomplete="off"/>
+                    </span>
+                </div>
+                <div ng-show="currentTag=='血压'">
+                    <span>心率(次/分)</span>
+                    <span>
+                        <input type="text" name="heartRate" ng-model="heartRate" placeholder="请输入心率值" autocomplete="off"/>
+                    </span>
+                </div>
+                <div ng-show="currentTag=='血糖'">
+                    <span>血糖(mmol/L)</span>
+                    <span>
+                        <input type="text" name="record" ng-model="record" placeholder="请输入血糖值" autocomplete="off"/>
+                    </span>
+                </div>
+            </form>
+        </div>
+
+        <section class="form-alert"></section>
+
+        <button class="long my-green-button marginTop20px" ng-click="addTagData()">添加数据</button>
+
+    </div>
+
+</div>

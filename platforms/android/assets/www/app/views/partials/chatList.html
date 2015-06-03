@@ -1,0 +1,17 @@
+
+<div id="chatList">
+    <div class="top_bar">
+        <a ng-click="back()"><img src="app/static/image/return.png" width="16px" height="16px" /></a>
+        <span>我的消息</span>
+    </div>
+
+    <a class="chatListItem" ng-repeat="msg in message" class="displayBlock" ui-sref="chatRoom({fromId: msg.info.uuid, clinicId: msg.info.clinicID})" onclick='window.clearInterval(chatListPolling);'>
+        <div>
+            <img ng-src="{{msg.info.photo}}" width="45px" height="45px">
+            <img ng-src="app/static/image/chatList_red.png" width="9px" height="9px" ng-show="msg.hasNewMsg=='true'">
+        </div>
+        <p>{{msg.info.name}}医生</p>
+        <p>{{msg.lastMsg.dialogMessage}}</p>
+        <span>{{msg.lastMsg.dialogTime}}</span>
+    </a>
+</div>

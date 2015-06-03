@@ -1,0 +1,226 @@
+#chatRoomBody {
+    min-width: 320px;
+    min-height: 100%;
+    background-color: #f1f1f1;
+    position: relative;
+    z-index: 0;
+}
+
+#chat_top_bar {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+#chat_top_bar img:nth-child(3) {
+    position: absolute;
+    padding: 13px 15px 17px 13px;
+    right: 0px;
+}
+
+#chatMessage {
+    padding-top: 45.5px;
+    padding-bottom: 50px;
+    list-style: none;
+    z-index: 1;
+}
+
+#chatMessage li {
+    margin-top: 15px;
+}
+
+#chatMessage li img {
+    float: left;
+    margin: 3.5px 10px 0px 14px;
+}
+
+#chatMessage li.isMine img {
+    float: right;
+    margin: 3.5px 14px 0px 10px;
+}
+
+#chatMessage li p:nth-child(3) {
+    font-size: 14px;
+    color: #565656;
+    background-color: #ffffff;
+    padding: 15px 17px;
+    display: inline-block;
+    border-radius: 13px;
+    line-height: 1em;
+    border: 1px solid #e1e1e1;
+    max-width: 66%;
+    word-break: break-word;
+}
+
+#chatMessage li.isMine p:nth-child(3) {
+    float: right;
+    background-color: #39bfa2;
+}
+
+#chatMessage li p:first-child {
+    clear: both;
+    text-align: center;
+}
+
+#chatMessage li p:first-child span {
+    font-size: 12px;
+    background-color: #d5d5d5;
+    color: white;
+    border-radius: 5px;
+    padding: 2px 5px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+form#chatForm {
+    background: #ffffff;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 28.5px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+span#chatFormInputSpan {
+    width: 80%;
+    display: inline-block;
+    text-align: center;
+    float: left;
+}
+
+.inputNotEmpty-input {
+    width: 70% !important;
+}
+
+.inputNotEmpty-button {
+    width: 20% !important;
+}
+
+form#chatForm input {
+    padding: 5px;
+    border-radius: 5px;
+    width: 90%;
+    border: 1px solid #5dd2b8;
+}
+
+form#chatForm input:focus {
+    outline: none;
+}
+
+span#chatFormEmotionSpan {
+    float: left;
+    width: 10%;
+    text-align: center;
+    display: inline-block;
+}
+
+span#chatFormFunctionSpan {
+    float: left;
+    width: 10%;
+    text-align: center;
+    display: inline-block;
+}
+
+span#chatFormFunctionSpan img {
+    width: 25px;
+}
+
+span#chatFormEmotionSpan img {
+    width: 25px;
+}
+
+span#chatFormFunctionSpan button {
+    display: inline-block;
+    background-color: #ffffff;
+    border: none;
+}
+
+span#chatFormEmotionSpan button {
+    display: inline-block;
+    background-color: #ffffff;
+    border: none;
+}
+
+button#sendMessagesButton {
+    display: inline-block;
+    width: 4em;
+    padding: 6.25px 0;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #39bfa2 !important;
+    border-radius: 4px;
+    text-align: center;
+    padding: 5px;
+}
+
+#chatRoomFunctionChoose {
+    position: fixed;
+    bottom: 40.5px;
+    background-color: #ffffff;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    width: 100%;
+    padding: 12px 0;
+}
+
+#chatRoomFunctionChoose button {
+    background-color: #ffffff;
+    display: block;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #999999;
+    width: 78%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #999999;
+    font-size: 14px;
+    border-radius: 6px;
+}
+
+#chatRoomFunctionChoose button:first-child {
+    margin-bottom: 12px;
+}
+
+#sendImgForm {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+
+#sendImgForm input {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 78%;
+    left: 11%;
+    opacity: 0;
+    height: 34px;
+}
+
+.dialogImages {
+    margin: 0px !important;
+}
+
+#chatRoomEmotionChoose {
+    position: fixed;
+    bottom: 40.5px;
+    background-color: #ffffff;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    width: 100%;
+    padding: 0px 6.6%;
+}
+
+#chatRoomEmotionChoose img {
+    width: 8%;
+    margin-right: 5.4%;
+    padding: 2%;
+}
+
+.dialogMessages img {
+    float: none !important;
+    vertical-align: text-bottom;
+    margin: 0 5px !important;
+}

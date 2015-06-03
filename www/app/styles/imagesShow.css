@@ -1,0 +1,16 @@
+#imagesShowBody {
+	width: 100%;
+	height: 100%;
+	min-width: 320px;
+	background-color: black;
+}
+
+#imagesShowBody .top_bar {
+	margin-bottom: 10%;
+}
+
+#imagesShowBody section {
+	width: 100%;
+	overflow: scroll;
+	height: 80%;
+}

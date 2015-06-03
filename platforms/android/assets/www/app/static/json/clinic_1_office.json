@@ -1,0 +1,28 @@
+[
+    {
+        "ID" : 0,
+        "name": "外科",
+        "image": "../static/image/clinic_1_office_0.jpg",
+        "doctors": [
+            {
+                "mame": "千本樱",
+                "image": "../static/image/clinic_1_doctor_0.jpg"
+            }
+        ]
+    },
+    {
+        "ID" : 1,
+        "name": "妇产科",
+        "image": "../static/image/clinic_1_office_1.jpg",
+        "doctors": [
+            {
+                "name": "静音",
+                "image": "../static/image/clinic_1_doctor_1.jpg"
+            },
+            {
+                "name": "纲手",
+                "image": "../static/image/clinic_1_doctor_2.jpg"
+            }
+        ]
+    }
+]

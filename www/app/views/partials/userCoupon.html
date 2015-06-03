@@ -1,0 +1,23 @@
+<!--
+/*
+* AUTHOR: wyp
+* EMAIL: 1140664142@qq.com
+* CREATE TIME: 2015.1.28
+*/
+-->
+<div>
+    <div ng-include="'/views/top.html'"></div>
+    <div class="ui divider"></div>
+    <div class="ui middle aligned one column grid" ng-repeat="coupon in couponList">
+        <a class="column" ui-sref="userCouponDetail({coupon.id})" style="text-decoration: none">
+            <div class="ui vertical fluid menu">
+                <div class="item">
+                    <p>卷号：{{coupon.id}}</p>
+                    <p>诊所：{{coupon.clinic}}</p>
+                    <p>有效期：{{coupon.time}}</p>
+                    <p>金额￥：{{coupon.value}}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

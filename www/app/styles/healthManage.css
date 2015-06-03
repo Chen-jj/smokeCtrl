@@ -1,0 +1,362 @@
+#healthManageBody {
+	width: 100%;
+	min-width: 320px;
+}
+
+section#healthManage_base {
+	width: 100%;
+    padding: 10px 15px;
+    box-sizing: border-box;
+	background-color: #ffffff;
+	border-bottom: 1px solid #e1e1e1;
+}
+
+div#healthManage_mybase {
+	border-bottom: 1px solid #e1e1e1;
+	overflow: hidden;
+    font-size: 15px;
+    margin-top: 6px;
+    padding-bottom: 11px;
+}
+
+div#healthManage_mybase img {
+	width: 70px;
+	height: 70px;
+	float: left;
+    margin-right: 15px;
+	border-radius: 50%;
+}
+
+div#healthManage_mybase p {
+    margin-top: 8px;
+	color: #999999;
+}
+
+div#healthManage_mybase div {
+    margin: 15px 0px 11px;
+}
+
+div#healthManage_mybase span {
+	color: #ef6dab;
+	border: 1px solid #ef6dab;
+	padding: 3px 5px;
+	margin-right: 5px;
+	border-radius: 5px;
+}
+
+div#healthManage_familybase {
+	color: #999999;
+    line-height: 4em;
+}
+
+div#healthManage_familybase span {
+	margin-right: 15px;
+}
+
+div#healthManage_familybase img {
+	vertical-align: middle;
+	width: 44px;
+}
+
+section#healthManageMenu {
+	margin-top: 20px;
+	margin-bottom: 50px;
+	padding: 10px;
+}
+
+section#healthManageMenu>p:first-child {
+	font-size: 15px;
+	color: #999999;
+}
+
+button.long.my-green-button {
+	width: 90%;
+	font-family: 微软雅黑;
+	font-size: 17px;
+	padding: 11px 0;
+	margin-bottom: 15px;
+}
+
+div#hMUserDetailBody {
+	width: 100%;
+	min-width: 320px;
+	background-color: #f5f5f5;
+}
+
+section.hMUserDetailSections {
+	background-color: #ffffff;
+	margin-bottom: 15px;
+    padding: 0px 15px;
+}
+
+section#hMUserDetailSection1 {
+	overflow: hidden;
+    padding: 13px 16px;
+}
+
+section#hMUserDetailSection1 img {
+	width: 70px;
+	height: 70px;
+	float: left;
+    margin-right: 20px;
+}
+
+section#hMUserDetailSection1 p:nth-child(2) {
+	color: #565656;
+	font-size: 20px;
+	margin-top: 2px;
+	margin-bottom: 12px;
+}
+
+section#hMUserDetailSection1 p:last-child {
+	color: #999999;
+	font-size: 17px;
+}
+
+section#hMUserDetailSection4 {
+    padding: 15px 16px;
+}
+
+section#hMUserDetailSection4 img {
+	width: 44px;
+}
+
+p#sickHistoryP {
+	color: #999999;
+	padding-left: 16px;
+	padding-bottom: 7px;
+}
+
+#healthInfoEditFieldInputs {
+    margin-top: 10px;
+    background-color: #ffffff;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+#healthInfoEditFieldInputs input {
+    border: none;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #39bfa2;
+}
+
+#healthInfoEditFieldInputs input:focus {
+    outline: none;
+}
+
+#healthInfoChooseSex div {
+	text-align: left;
+    padding: 8px;
+}
+
+#healthInfoChooseSex div img {
+	float: right;
+	margin-top: 4px;
+}
+
+#healthInfoChooseSex div:first-child {
+	border-bottom: 1px solid #e1e1e1;
+}
+
+#hMMemberListBody {
+	min-width: 320px;
+}
+
+.memberListItems {
+	position: relative;
+}
+
+.memberListItem {
+	padding: 10px;
+    overflow: hidden;
+	border-bottom: 1px solid #e1e1e1;
+	position: relative;
+}
+
+.memberImg {
+	width: 80px;
+	height: 80px;
+    margin-right: 10px;
+    float: left;
+}
+
+div.memberListItem p {
+    color: #999999;
+}
+
+div.memberListItem p:nth-child(2) {
+    font-size: 16px;
+    color: #565656;
+    margin-bottom: 12px;
+}
+
+div.memberListItem p:nth-child(2) span {
+    margin-left: 15px;
+    color: #999999;
+}
+
+#hMMemberListBody .my-green-button {
+	width: 90%;
+	margin-top: 100px;
+}
+
+#addMembersInputs {
+    margin-top: 10px;
+    background-color: #ffffff;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+#addMembersInputs input {
+    border: none;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #558ed5;
+    margin-bottom: 10px;
+}
+
+#addMembersInputs input:focus {
+    outline: none;
+}
+
+#commitAddMemberButton {
+	margin-top: 50px !important;
+}
+
+nav#hMMenuNav {
+	margin-top: 10px;
+}
+
+nav#hMMenuNav li {
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	margin-right: 10px;
+	border: none;
+	color: #ffffff;
+	width: 30%;
+	background-color: #8ee6d2;
+}
+
+section#hMMenuBody {
+    padding: 15px 10px;
+	background-color: #ffffff;
+	border-top-right-radius: 6px;
+}
+
+.activeHMNav {
+	color: black !important;
+	background-color: white !important;
+}
+
+section#hMMenuBody p {
+	color: black;
+	padding: 2px;
+	text-indent: 5px;
+}
+
+section#hMMenuBody p span {
+	color: #ffcc50;
+}
+
+section#hMMenuBody p:first-child span {
+	color: #4fc1e9;
+}
+
+div#echarts_bar {
+	width: 100%;
+	height: 270px;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	padding: 10px 0;
+}
+
+div#addTagDataTable  {
+	background-color: white;
+	padding: 0 10px;
+}
+
+div#addTagDataTable div {
+	border-top: 1px solid #e1e1e1;
+	overflow: hidden;
+}
+
+div#addTagDataTable div:first-child {
+	border-top: none;
+}
+
+div#addTagDataTable div span:first-child {
+	padding: 18px 0px;
+	float: left;
+	line-height: 1em;
+}
+
+div#addTagDataTable div span:last-child {
+	float: right;
+	line-height: 1em;
+}
+
+div#addTagDataTable input {
+	border: none;
+	padding: 18px 0px;
+	text-align: right;
+	font-size: 15px;
+	width: 150px;
+}
+
+div#addTagDataTable input:focus {
+	outline: none;
+}
+
+div#hMFamilySeclect {
+	line-height: 1em;
+}
+
+div#hMFamilySeclect img {
+    width: 9px;
+}
+
+div#hMhistoryBody {
+	min-width: 320px;
+}
+
+div#hMhistoryMain {
+	padding: 20px 15px;
+}
+
+p#hMhistoryTitleP {
+	color: #b7b7b7;
+    margin-bottom: 10px;
+}
+
+section#hMhistoryMenu {
+	padding: 10px;
+	background-color: #ffffff;
+	border-radius: 8px;
+}
+
+div.hMhistoryItem {
+	border-top: 1px solid #e1e1e1;
+	padding: 10px 0;
+}
+
+div.hMhistoryItem:last-child {
+	padding-bottom: 0;
+}
+
+div.hMhistoryItem span {
+	color: #39bfa2;
+}
+
+div.hMhistoryItem span:first-child {
+	color: #4fc1e9;
+}
+
+div.hMhistoryItem span:nth-child(2) {
+	color: #ffcc50;
+}
+
+div.hMhistoryItem span:last-child {
+	color: #565656;
+	float: right;
+}

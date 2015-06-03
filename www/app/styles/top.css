@@ -1,0 +1,70 @@
+.pane {
+	height: 0px;
+}
+
+.returnPic {
+    background: #558ed5;
+    font-size: 15px;
+    width: 100%;
+}
+
+.returnPic img {
+	padding: 10px 10px 14px 10px;
+	vertical-align: middle;
+}
+
+.returnPic span {
+    padding: 10px 15px 12px 0px;
+	display: inline-block;
+	color : #ffffff;
+}
+
+.top_bar_favorite {
+	position: relative;
+	float: right;
+    padding: 14px 10px 0px 0px !important;
+}
+
+.metadata {
+    color: #d6d6d6;
+    float:right;
+}
+
+.author{
+    color: #E28E03;
+}
+
+.doctor {
+    color: #39BFA2;
+}
+
+.time {
+    color: #d6d6d6;
+}
+
+.text {
+    color: #999999;
+}
+
+.note {
+    color: #565656;
+}
+
+.fluidImg {
+    width:100%;
+    height:120px;
+}
+
+.topBar {
+    background: #39bfa2;
+    padding : 3%;
+}
+
+.topBar i {
+    font-size: 1.5em;
+    height: 1em;
+}
+
+.topBar .button-clear {
+    color: white;
+}

@@ -1,0 +1,23 @@
+<!--
+/*
+* AUTHOR: wyp
+* EMAIL: 1140664142@qq.com
+* CREATE TIME: 2015.1.28
+*/
+-->
+<div ng-controller="clinicControllers.clinicNewsCtrl">
+    <div ng-include="'app/views/top.html'"></div>
+    <div class="ui divider"></div>
+    <!--公告链接列表-->
+    <!--div ng-repeat="new in news|orderBy:id">
+        <a class="ui button" ng-href="/#/clinicInfo/{{clinicId}}/clinicNew/{{new.id}}">
+            <p>{{new.title}}     {{new.date}}</p>
+        </a>
+    </div-->
+    <div class="ui divided selection list" ng-repeat="new in news">
+        <a class = "item" ui-sref="clinicNewsDetail({clinicId:clinicID,newId:new.announcementID})" style = "text-decoration: none;">
+            <div class = "ui black horizontal label">{{new.date}}</div>
+            {{new.title}}
+        </a>
+    </div>
+</div>
