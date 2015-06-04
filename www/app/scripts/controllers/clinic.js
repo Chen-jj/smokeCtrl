@@ -269,7 +269,7 @@ clinicControllers
         function($scope, $state, $rootScope)  {
             
             $scope.back = function(){
-                $state.go('userFavorite', {target : 'hospital'});
+                $state.go('homepage');
             };
 
 
@@ -284,46 +284,23 @@ clinicControllers
             $scope.currentPage = "clinic";
 
             //-------------------------------------获取诊所信息---------------------------------------------------------
-            $.ajax(baseUrl+ "/patient" +"/clinicInfo",{
-                type: "GET",
-                data: {
-                    clinic_id: $state.params.clinicId
-                },
-                xhrFields: {withCredentials: true},
-                crossDomain: true,
-                error: function(){alert("服务器不能访问");},
-                success: function(msg){
-                    if (msg.status == "failure") {
-                        alert("诊所不存在或已删除");
-                    } else {
-                        $scope.$apply(function() {
-                            //--------------------科室id--------------------
-                            $scope.clinicID = $state.params.clinicId;
-                            //----------科室信息、留言板、信息元组-----------
-                            $scope.clinicInfo    = msg.message;
-                            $scope.messageBoard  = msg.messageBoard;
-                            $scope.doctorTunple  = msg.doctor;
-                            $scope.patientTunple = msg.patient;
-
-
-                            initBoard($scope.messageBoard);
-                            //----------------------------------------------
-                            $scope.isSet = false;
-                        });
-                        //是否被收藏
-
-                        /*var favoriteLen = $rootScope.favoriteClinics.length;
-                        for (var i = 0; i < favoriteLen; i++) {
-                            console.log($state.params.clinicId + " - " + $rootScope.favoriteClinics[i].clinicID);
-                            if($state.params.clinicId == $rootScope.favoriteClinics[i].clinicID) {
-                                $scope.$apply(function() {
-                                    $scope.favorite = true;
-                                });
-                            }
-                        }*/
-                    }
+            if ($state.params.clinicId == 1) {
+                $scope.clinicInfo = {
+                    name: "广州酒家",
+                    introduction: "广州酒家黄埔有限公司成立于2004年8月，座落于黄埔区海员路39号海员俱乐部内，相邻于黄埔大沙地商业街，旺中带静。公司拥有大小VIP房24间，最大VIP房可同时筵开六席，宴会厅可同时筵开20多席，为黄埔区首屈一指的商务宴会场所。\n广州酒家黄埔有限公司自开业以来，以优质的服务，优美的环境，高质素的出品，洁净的卫生，赢取了好的口啤，并于同年获得第一批国家五钻级酒家的称号。",
+                    address: "海珠区新港西路142号穗发花园内",
+                    phone: "020-38809138",
+                    images: ["GZ_H_1", "GZ_H_2", "GZ_H_3", "GZ_H_4"]
                 }
-            });
+            } else if ($state.params.clinicId == 2) {
+                $scope.clinicInfo = {
+                    name: "黄埔华苑酒家",
+                    introduction: "黄埔华苑酒家座落于繁华的天河东163号，酒家设有大型免费停车场，拥有38间超豪华的贵宾厅房，大厅更可同时容纳30多席的商务宴请！酒家一直以传统粤菜、海鲜、鲍参翅肚为销售宗旨。在这基础上不断进取，推陈创新，隆重推出获“国际美食节”金奖的“一品黄埔宴”和20多款在历届美食节得奖的金牌菜式，欢迎广大食客光临品尝指导！",
+                    address: "广州市黄埔区黄埔东路789号(石化路口)",
+                    phone: "020－82493088",
+                    images: ["HY_H_1", "HY_H_2", "HY_H_3", "GZ_H_4"]
+                }
+            }
             //-------------------------------------地图设置-------------------------------------------------------------
             $scope.setMap = function() {
                 if ($scope.isSet==false) {

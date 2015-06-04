@@ -10,9 +10,8 @@
 <ionic-view>
     <!-- header -->
     <ionic-content class="no-header">
-        <div class="bar bar-header bar-blue">
-            <img src="app/static/image/logo.png" class="width35px box-sizing-content-box" />
-            <h2 class="title">健康云空间</h2>
+        <div class="bar bar-header bar-dark">
+            <h2 class="title">图欧平台</h2>
         </div>
     </ionic-content>
 
@@ -20,49 +19,37 @@
     <div id="homepage_flux">
     </div>
 
-    <ul class="row homepage_row">
-        <li class="col homepage_col" ui-sref="userPaper">
-            <div id="homepage_col_1"></div>
-            我的病历
+     <ul class="row homepage_row">
+        <li class="col homepage_col" ui-sref="clinicInfo({clinicId: 1})">
+            <div><i class="food icon"></i></div>
+            我的无烟酒家
         </li>
-        <li class="col homepage_col" ui-sref="newHealthManage">
-            <div id="homepage_col_2"></div>
-            健康管理
-        </li>
-        <li class="col homepage_col" ui-sref="healthManage">
-            <div id="homepage_col_3"></div>
-            健康监测
+        <li class="col homepage_col" ui-sref="userInsurance">
+            <div><i class="ticket icon"></i></div>
+            优惠卷广场
         </li>
     </ul>
 
     <ul class="row homepage_row">
-        <li class="col homepage_col" ui-sref="healthEva">
-            <div id="homepage_col_4"></div>
-            健康评估
+        <li class="col homepage_col" ui-sref="userhealthCompany">
+            <div><i class="building icon"></i></div>
+            健康商家广场
         </li>
+        <li class="col homepage_col" ui-sref="userDoAFavour">
+            <div><i class="asterisk icon"></i></div>
+            便民服务广场
+        </li>
+    </ul>
+
+    <ul class="row homepage_row">
         <li class="col homepage_col">
-            <div id="homepage_col_5" ui-sref="userInsurance"></div>
-            我的保险
+            <div><i class="leaf icon"></i></div>
+            我的好空气
         </li>
         <li class="col homepage_col" ui-sref="userMenu">
-            <div id="homepage_col_6"></div>
-            数字资产
+            <div><i class="coffee icon"></i></div>
+            我的健康生活
         </li>
     </ul>
 
-    <!-- footer tabs -->
-    <div class="tabs tabs-icon-top">
-        <a class="tab-item" ui-sref="userFavorite({target: 'doctor'})">
-            <i class="icon ion-ios7-people-outline"></i>
-            我的医生
-        </a>
-        <a class="tab-item" ui-sref="userFavorite({target: 'hospital'})">
-            <i class="icon ion-ios7-location-outline"></i>
-            我的医院
-        </a>
-        <a class="tab-item">
-            <i class="icon ion-ios7-medkit-outline"></i>
-            我的幸福
-        </a>
-    </div>
 </ionic-view>

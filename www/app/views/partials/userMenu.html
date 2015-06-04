@@ -10,139 +10,156 @@
 * EDIT TIME: 2015.3.12
 */
 -->
-<div id="userMenuContent">
-    <div ng-include="'app/views/top.html'"></div>
-<!--    <div id="userMenuImage">
-        <div id = "head">
-            <img ng-click="upPhoto()" id="headImage" ng-src="{{userInfo.photo}}"/>
-            <img id="male" ng-show="userInfo.gender=='男'" ng-click="userInfo.gender='女'; save();"  ng-src="app/static/image/male.png"/>
-            <img id="female" ng-show="userInfo.gender=='女'" ng-click="userInfo.gender='男'; save();"  ng-src="app/static/image/female.png"/>
+<div id="userMenuContent" ng-init="showSub=false">
+
+    <div ng-show="!showSub">
+        <div ng-include="'app/views/top.html'"></div>
+
+        <div class="list" ng-click="showSub=true">
+
+          <a class="item item-icon-left" ng-click="subtitle='我的分享'">
+            <i class="icon ion-aperture"></i>
+            我的分享
+          </a>
+
+          <a class="item item-icon-left item-icon-right" ng-click="subtitle='我的优惠卷'">
+            <i class="ticket icon marginLeft-43px"></i>
+            我的优惠卷
+          </a>
+
+          <a class="item item-icon-left item-icon-right" ng-click="subtitle='我的健康商家'">
+            <i class="building icon marginLeft-43px"></i>
+            我的健康商家
+          </a>
+
+          <a class="item item-icon-left item-icon-right" ng-click="subtitle='我的便民服务'">
+            <i class="asterisk icon marginLeft-43px"></i>
+            我的便民服务
+          </a>
+
         </div>
-        <p class="userName">{{userInfo.name}}</p>
-        <div class="userMenu">
-            <div class="myBooking" ui-sref="userBooking" onclick="window.clearInterval(chatCheckPolling);">
-                <div>
-                    <img src="app/static/image/booking.png" width="23px" height="23px">
+    </div>
+
+    <div ng-show="showSub">
+
+        <div class="returnPic">
+            <img src="app/static/image/return.png" ng-click="showSub=false" width="16px" height="16px" />
+            <span>{{subtitle}}</span>
+        </div>
+
+        <div ng-show="subtitle=='我的分享'">
+            <div class="padding10px">
+                <div class="ui blue fluid button">
+                我要分享
                 </div>
-                <div>我的预约</div>
-            </div>
-            <div class="myNews" ui-sref="chatList" onclick="window.clearInterval(chatCheckPolling);">
-                <div>
-                    <img ng-src="app/static/image/chatList_red.png" width="9px" height="9px" ng-show="msgCount>0">
-                    <img src="app/static/image/news.png" width="23px" height="18px">
-                </div>
-                <div>我的消息</div>
             </div>
         </div>
-    </div>-->
-    <div class="userGinfo">
 
-        <div class="userG">
-            <span class="userNickName">我的总资产（电子病历）</span>
-            <span class="userInfoArticle">3份</span>
+        <div ng-show="subtitle=='我的优惠卷'">
+            <ion-list show-reorder="data.showReorder">
+
+                <ion-item ng-repeat="item in items" item="item" class="item-remove-animate" ng-click="showAsuranceDetail($index)">
+                  {{item.style}} {{item.id}}
+                </ion-item>
+
+            </ion-list>
         </div>
 
-        <div class="userG">
-            <span class="userNickName">健康监测数据</span>
-            <span class="userInfoArticle">1份</span>
+        <div ng-show="subtitle=='我的健康商家'">
+          <ion-list show-reorder="data.showReorder">
+
+            <ion-item item="item" class="item-remove-animate" ng-click="showhealthCompanyDetail($index)">
+              方所书店
+            </ion-item>
+
+          </ion-list>
         </div>
 
-        <div class="userG">
-            <span class="userNickName">健康管理数据</span>
-            <span class="userInfoArticle">5份</span>
-        </div>
+        <div ng-show="subtitle=='我的便民服务'">
+            <div class="list">
 
-        <div class="userG">
-            <span class="userNickName">健康评估数据</span>
-            <span class="userInfoArticle">5份</span>
-        </div>
+              <div class="item item-divider box-sizing-border-box textAlignCenter">
+                便民服务热线
+              </div>
 
-        <div class="userG">
-            <span class="userNickName">我的保险数据</span>
-            <span class="userInfoArticle">{{asurancesNum}}份</span>
-        </div>
+              <!-- <a class="item">
+                煤气抢险
+                <span class="item-note">
+                  85515920
+                </span>
+              </a> -->
 
-    </div>
+              <a class="item">
+                自来水供水热线
+                <span class="item-note">
+                  81962288
+                </span>
+              </a>
 
-    <div class="myCollect">
+              <a class="item">
+                广州供电热线
+                <span class="item-note">
+                  95598
+                </span>
+              </a>
 
-        <div class="myCollection">
-            <span>开发区医院</span>
-            <span class="userInfoArticle">1份</span>
-        </div>
+              <!-- <a class="item">
+                广州市路灯管理所
+                <span class="item-note">
+                  84446148
+                </span>
+              </a> -->
 
-        <div class="myCollection">
-            <span>开发区第二医院</span>
-            <span class="userInfoArticle">1份</span>
-        </div>
+              <a class="item">
+                煤气公司客户服务热线
+                <span class="item-note">
+                  83962222
+                </span>
+              </a>
 
-        <div class="myCollection">
-            <span>开发区第三医院</span>
-            <span class="userInfoArticle">1份</span>
-        </div>
+              <a class="item">
+                广州有线业务咨询电话
+                <span class="item-note">
+                  86681107
+                </span>
+              </a>
 
-    </div>
-
-    <div class="myCollect">
-
-        <div class="myCollection">
-            <li class="item-toggle">
-                是否对医生授权
-                <label class="toggle toggle-assertive">
-                    <input type="checkbox">
-                    <div class="track">
-                        <div class="handle"></div>
-                    </div>
-                </label>
-            </li>
-        </div>
-
-        <div class="myCollection">
-            <li class="item-toggle">
-                是否对保险公司授权
-                <label class="toggle toggle-assertive">
-                    <input type="checkbox">
-                    <div class="track">
-                        <div class="handle"></div>
-                    </div>
-                </label>
-            </li>
-        </div>
-
-        <div class="myCollection">
-            <li class="item-toggle">
-                是否对科研机构授权
-                <label class="toggle toggle-assertive">
-                    <input type="checkbox">
-                    <div class="track">
-                        <div class="handle"></div>
-                    </div>
-                </label>
-            </li>
-        </div>
-
-        <div class="myCollection">
-            <li class="item-toggle">
-                是否对医疗机构授权
-                <label class="toggle toggle-assertive">
-                    <input type="checkbox">
-                    <div class="track">
-                        <div class="handle"></div>
-                    </div>
-                </label>
-            </li>
+            </div>
         </div>
 
     </div>
 
-    <div class="row" ng-init="showActivePwd=false">
-        <div class="col">
-            <button class="button button-full button-positive" ng-click="showActivePwd=true">
-                获取动态密码
-            </button>
-            <button class="button button-outline button-full button-positive" ng-show="showActivePwd==true">
-                39bfa2
-            </button>
+</div>
+
+<!--优惠卷细节-->
+<div class="ui asuranceDetail2 modal">
+
+    <div class="ui form segment">
+        <div class="field">
+            <label>优惠卷价格</label>
+            <input type="text" disabled="disabled" ng-model="keynote.company">
+        </div>
+
+        <div class="field">
+            <label>优惠卷有效期至</label>
+            <input type="text" disabled="disabled" ng-model="keynote.id">
+        </div>
+    </div>
+
+</div>
+
+<!--优惠商家细节-->
+<div class="ui healthCompanyDetail2 modal">
+
+    <div class="ui form segment">
+        <div class="field">
+            <label>优惠内容</label>
+            <input type="text" disabled="disabled" value="买书送饮料">
+        </div>
+
+        <div class="field">
+            <label>优惠有效期至</label>
+            <input type="text" disabled="disabled" ng-model="keynote.id">
         </div>
     </div>
 

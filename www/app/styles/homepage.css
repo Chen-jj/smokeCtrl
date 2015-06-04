@@ -22,6 +22,7 @@ email : 2385367768@qq.com;
 .col.homepage_col {
     text-align: center;
     border-right: 1px solid #e1e1e1;
+    padding-bottom: 15px;
 }
 
 .homepage_col:last-child {
@@ -29,38 +30,12 @@ email : 2385367768@qq.com;
 }
 
 .col.homepage_col div {
-    height: 60px;
+    height: 41px;
     width: 55px;
     display: block;
-    margin: 10px auto;
+    margin: 15px auto;
 }
 
-.col.homepage_col div#homepage_col_1 {
-    background: url('../static/image/homepage_list_1.png') no-repeat;
-    background-position: -38px -44px;
-}
-
-.col.homepage_col div#homepage_col_2 {
-    background: url('../static/image/homepage_list_1.png') no-repeat;
-    background-position: -38px -168px;
-}
-
-.col.homepage_col div#homepage_col_3 {
-    background: url('../static/image/homepage_list_1.png') no-repeat;
-    background-position: -165px -168px;
-}
-
-.col.homepage_col div#homepage_col_4 {
-    background: url('../static/image/homepage_list_2.png') no-repeat;
-    background-position: -145px -5px;
-}
-
-.col.homepage_col div#homepage_col_5 {
-    background: url('../static/image/homepage_list_2.png') no-repeat;
-    background-position: -147px -126px;
-}
-
-.col.homepage_col div#homepage_col_6 {
-    background: url('../static/image/homepage_list_1.png') no-repeat;
-    background-position: -291px -231px;
+.col.homepage_col div i {
+    font-size: 3em;
 }

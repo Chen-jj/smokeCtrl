@@ -167,13 +167,13 @@ angular.module('starter', ['ionic', 'controllers', 'userServices', 'ngCookies'])
   var viewsRoot = 'app/views/partials/';
     $stateProvider
     .state('login', {
-      url: '/',
+      url: '/login',
       templateUrl: viewsRoot + 'logLogin.html',
       controller: 'logControllers.loginCtrl'
     })
 
     .state('homepage', {
-      url: '/homepage',
+      url: '/',
       templateUrl: viewsRoot + 'homepage.html',
       controller: 'homepageControllers.homepageListCtrl',
     })
@@ -356,6 +356,18 @@ angular.module('starter', ['ionic', 'controllers', 'userServices', 'ngCookies'])
       url:'/userInsurance',
       templateUrl: viewsRoot + 'userInsurance.html',
       controller: 'userControllers.userInsuranceCtrl',
+    })
+    
+    .state('userDoAFavour', {
+      url:'/userDoAFavour',
+      templateUrl: viewsRoot + 'userDoAFavour.html',
+      controller: 'userControllers.userDoAFavourCtrl',
+    })
+    
+    .state('userhealthCompany', {
+      url:'/userhealthCompany',
+      templateUrl: viewsRoot + 'userhealthCompany.html',
+      controller: 'userControllers.userhealthCompanyCtrl',
     })
 
   $urlRouterProvider.otherwise('/');

@@ -1,0 +1,29 @@
+<div>
+    
+    <div ng-include="'app/views/top.html'"></div>
+
+      <ion-list show-reorder="data.showReorder">
+
+        <ion-item ng-repeat="item in items" item="item" class="item-remove-animate" ng-click="showAsuranceDetail($index)">
+          {{item.style}} {{item.id}}
+        </ion-item>
+
+      </ion-list>
+
+</div>
+
+<div class="ui healthCompanyDetail modal">
+
+  <div class="ui form segment">
+    <div class="field">
+      <label>优惠内容</label>
+      <input type="text" disabled="disabled" ng-model="keynote.company">
+    </div>
+
+    <div class="field">
+      <label>优惠有效期至</label>
+      <input type="text" disabled="disabled" ng-model="keynote.id">
+    </div>
+  </div>
+
+</div>

@@ -286,7 +286,37 @@ div.ui.add_asurance.modal, div.ui.asuranceDetail.modal {
     box-sizing: border-box;
 }
 
+div.ui.add_asurance.modal, div.ui.healthCompanyDetail.modal {
+    padding: 10px;
+    min-height: 292px;
+    box-sizing: border-box;
+}
+
+div.ui.add_asurance.modal, div.ui.asuranceDetail2.modal {
+    padding: 10px;
+    min-height: 292px;
+    box-sizing: border-box;
+}
+
+div.ui.add_asurance.modal, div.ui.healthCompanyDetail2.modal {
+    padding: 10px;
+    min-height: 292px;
+    box-sizing: border-box;
+}
+
 div.ui.asuranceDetail.modal {
-    min-height: 240px;
+    min-height: 168px;
+}
+
+div.ui.healthCompanyDetail.modal {
+    min-height: 168px;
+}
+
+div.ui.asuranceDetail2.modal {
+    min-height: 168px;
+}
+
+div.ui.healthCompanyDetail2.modal {
+    min-height: 168px;
 }
 

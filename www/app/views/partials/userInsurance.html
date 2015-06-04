@@ -6,70 +6,22 @@
 
         <ion-item ng-repeat="item in items" item="item" class="item-remove-animate" ng-click="showAsuranceDetail($index)">
           {{item.style}} {{item.id}}
-
-          <ion-option-button class="button-assertive" ng-click="delete($index)">
-            删除
-          </ion-option-button>
-
         </ion-item>
 
       </ion-list>
-      
-      <button class="long my-green-button marginTop20px" ng-click="showAdd()">添加保险</button>
-
-</div>
-
-<div class="ui add_asurance modal">
-
-	<div class="ui form segment">
-		<div class="two fields">
-			<div class="field">
-				<label>余额</label>
-				<input placeholder="余额" type="text" ng-model="_money">
-			</div>
-			<div class="field">
-				<label>保险性质</label>
-				<input placeholder="保险性质" type="text" ng-model="_style">
-			</div>
-		</div>
-		<div class="field">
-			<label>保险机构</label>
-			<input placeholder="保险机构" type="text" ng-model="_company">
-		</div>
-
-		<div class="field">
-			<label>保险单号</label>
-			<input placeholder="保险单号" type="text" ng-model="_id">
-		</div>
-
-		<div class="inline field">
-		</div>
-
-		<div class="ui blue fluid submit button" ng-click="add()">确认</div>
-	</div>
 
 </div>
 
 <div class="ui asuranceDetail modal">
 
 	<div class="ui form segment">
-		<div class="two fields">
-			<div class="field">
-				<label>余额</label>
-				<input type="text" disabled="disabled" ng-model="keynote.money">
-			</div>
-			<div class="field">
-				<label>保险性质</label>
-				<input type="text" disabled="disabled" ng-model="keynote.style">
-			</div>
-		</div>
 		<div class="field">
-			<label>保险机构</label>
+			<label>优惠卷价格</label>
 			<input type="text" disabled="disabled" ng-model="keynote.company">
 		</div>
 
 		<div class="field">
-			<label>保险单号</label>
+			<label>优惠卷有效期至</label>
 			<input type="text" disabled="disabled" ng-model="keynote.id">
 		</div>
 	</div>

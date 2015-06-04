@@ -6,11 +6,11 @@
 
 <div ng-include="'app/views/top.html'"></div>
 
-<div ng-repeat="clinic in clinics" ng-show="isClinic">
-	<div ui-sref="clinicInfo({clinicId:clinic.clinicID})" class="clinicInfo">
+<div ng-repeat="item in restaurants" ng-show="isClinic">
+	<div ui-sref="clinicInfo({clinicId:item.id})" class="clinicInfo">
 		<img class="clinicImg" src="app/static/image/hospital.jpg">
 		<div class="clinicIntro">
-			<p>{{clinic.name}}</p>
+			<p>{{item.name}}</p>
 			<!-- <p>距离：{{clinic.dist}}</p> -->
 			<div class = "ui teal star rating active" ng-init="ratingInit(4, $index)">
 	            <i class = "icon"></i>
